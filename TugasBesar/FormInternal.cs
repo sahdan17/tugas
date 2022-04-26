@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TugasBesar
+{
+    public partial class FormInternal : Form
+    {
+        public FormInternal()
+        {
+            InitializeComponent();
+        }
+
+        private void buttonProduk_Click(object sender, EventArgs e)
+        {
+            FormDataBarang form2a = new FormDataBarang();
+            form2a.TopLevel = false;
+            form2a.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(form2a);
+            form2a.Show();
+        }
+
+        private void buttonPegawai_Click(object sender, EventArgs e)
+        {
+            FormDataPegawai form2b = new FormDataPegawai();
+            form2b.TopLevel = false;
+            form2b.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(form2b);
+            form2b.Show();
+        }
+    }
+}
