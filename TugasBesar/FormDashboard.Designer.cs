@@ -32,17 +32,17 @@ namespace TugasBesar
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBoxLogout = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanelSidebar = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonLaporan = new System.Windows.Forms.Button();
+            this.buttonTransaksi = new System.Windows.Forms.Button();
+            this.buttonInternal = new System.Windows.Forms.Button();
+            this.buttonDashboard = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogout = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelSidebar = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonDashboard = new System.Windows.Forms.Button();
-            this.buttonInternal = new System.Windows.Forms.Button();
-            this.buttonTransaksi = new System.Windows.Forms.Button();
-            this.buttonLaporan = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -52,12 +52,12 @@ namespace TugasBesar
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogout)).BeginInit();
+            this.tableLayoutPanelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.tableLayoutPanelSidebar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,88 @@ namespace TugasBesar
             this.panel3.Size = new System.Drawing.Size(218, 750);
             this.panel3.TabIndex = 15;
             // 
+            // tableLayoutPanelSidebar
+            // 
+            this.tableLayoutPanelSidebar.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelSidebar.ColumnCount = 1;
+            this.tableLayoutPanelSidebar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSidebar.Controls.Add(this.buttonLaporan, 0, 3);
+            this.tableLayoutPanelSidebar.Controls.Add(this.buttonTransaksi, 0, 2);
+            this.tableLayoutPanelSidebar.Controls.Add(this.buttonInternal, 0, 1);
+            this.tableLayoutPanelSidebar.Controls.Add(this.buttonDashboard, 0, 0);
+            this.tableLayoutPanelSidebar.Location = new System.Drawing.Point(12, 362);
+            this.tableLayoutPanelSidebar.Name = "tableLayoutPanelSidebar";
+            this.tableLayoutPanelSidebar.RowCount = 4;
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanelSidebar.Size = new System.Drawing.Size(191, 153);
+            this.tableLayoutPanelSidebar.TabIndex = 0;
+            // 
+            // buttonLaporan
+            // 
+            this.buttonLaporan.BackColor = System.Drawing.Color.White;
+            this.buttonLaporan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLaporan.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLaporan.Location = new System.Drawing.Point(3, 117);
+            this.buttonLaporan.Name = "buttonLaporan";
+            this.buttonLaporan.Size = new System.Drawing.Size(185, 33);
+            this.buttonLaporan.TabIndex = 3;
+            this.buttonLaporan.Text = "Laporan";
+            this.buttonLaporan.UseVisualStyleBackColor = false;
+            this.buttonLaporan.Click += new System.EventHandler(this.buttonLaporan_Click);
+            // 
+            // buttonTransaksi
+            // 
+            this.buttonTransaksi.BackColor = System.Drawing.Color.White;
+            this.buttonTransaksi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTransaksi.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTransaksi.Location = new System.Drawing.Point(3, 79);
+            this.buttonTransaksi.Name = "buttonTransaksi";
+            this.buttonTransaksi.Size = new System.Drawing.Size(185, 32);
+            this.buttonTransaksi.TabIndex = 2;
+            this.buttonTransaksi.Text = "Transaksi";
+            this.buttonTransaksi.UseVisualStyleBackColor = false;
+            this.buttonTransaksi.Click += new System.EventHandler(this.buttonTransaksi_Click);
+            // 
+            // buttonInternal
+            // 
+            this.buttonInternal.BackColor = System.Drawing.Color.White;
+            this.buttonInternal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonInternal.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInternal.Location = new System.Drawing.Point(3, 41);
+            this.buttonInternal.Name = "buttonInternal";
+            this.buttonInternal.Size = new System.Drawing.Size(185, 32);
+            this.buttonInternal.TabIndex = 1;
+            this.buttonInternal.Text = "Internal";
+            this.buttonInternal.UseVisualStyleBackColor = false;
+            this.buttonInternal.Click += new System.EventHandler(this.buttonInternal_Click);
+            // 
+            // buttonDashboard
+            // 
+            this.buttonDashboard.BackColor = System.Drawing.Color.White;
+            this.buttonDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDashboard.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDashboard.Location = new System.Drawing.Point(3, 3);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.Size = new System.Drawing.Size(185, 32);
+            this.buttonDashboard.TabIndex = 0;
+            this.buttonDashboard.Text = "Dashboard";
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 107);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(191, 181);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBoxLogout
             // 
             this.pictureBoxLogout.BackColor = System.Drawing.Color.Transparent;
@@ -96,17 +178,6 @@ namespace TugasBesar
             this.pictureBoxLogout.TabIndex = 1;
             this.pictureBoxLogout.TabStop = false;
             this.pictureBoxLogout.Click += new System.EventHandler(this.pictureBoxLogout_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 107);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(191, 181);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -148,75 +219,6 @@ namespace TugasBesar
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(684, 487);
             this.panelContent.TabIndex = 2;
-            // 
-            // tableLayoutPanelSidebar
-            // 
-            this.tableLayoutPanelSidebar.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanelSidebar.ColumnCount = 1;
-            this.tableLayoutPanelSidebar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSidebar.Controls.Add(this.buttonLaporan, 0, 3);
-            this.tableLayoutPanelSidebar.Controls.Add(this.buttonTransaksi, 0, 2);
-            this.tableLayoutPanelSidebar.Controls.Add(this.buttonInternal, 0, 1);
-            this.tableLayoutPanelSidebar.Controls.Add(this.buttonDashboard, 0, 0);
-            this.tableLayoutPanelSidebar.Location = new System.Drawing.Point(12, 362);
-            this.tableLayoutPanelSidebar.Name = "tableLayoutPanelSidebar";
-            this.tableLayoutPanelSidebar.RowCount = 4;
-            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelSidebar.Size = new System.Drawing.Size(191, 153);
-            this.tableLayoutPanelSidebar.TabIndex = 0;
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.BackColor = System.Drawing.Color.White;
-            this.buttonDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDashboard.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDashboard.Location = new System.Drawing.Point(3, 3);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(185, 32);
-            this.buttonDashboard.TabIndex = 0;
-            this.buttonDashboard.Text = "Dashboard";
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
-            // buttonInternal
-            // 
-            this.buttonInternal.BackColor = System.Drawing.Color.White;
-            this.buttonInternal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonInternal.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInternal.Location = new System.Drawing.Point(3, 41);
-            this.buttonInternal.Name = "buttonInternal";
-            this.buttonInternal.Size = new System.Drawing.Size(185, 32);
-            this.buttonInternal.TabIndex = 1;
-            this.buttonInternal.Text = "Internal";
-            this.buttonInternal.UseVisualStyleBackColor = false;
-            this.buttonInternal.Click += new System.EventHandler(this.buttonInternal_Click);
-            // 
-            // buttonTransaksi
-            // 
-            this.buttonTransaksi.BackColor = System.Drawing.Color.White;
-            this.buttonTransaksi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTransaksi.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTransaksi.Location = new System.Drawing.Point(3, 79);
-            this.buttonTransaksi.Name = "buttonTransaksi";
-            this.buttonTransaksi.Size = new System.Drawing.Size(185, 32);
-            this.buttonTransaksi.TabIndex = 2;
-            this.buttonTransaksi.Text = "Transaksi";
-            this.buttonTransaksi.UseVisualStyleBackColor = false;
-            // 
-            // buttonLaporan
-            // 
-            this.buttonLaporan.BackColor = System.Drawing.Color.White;
-            this.buttonLaporan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLaporan.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLaporan.Location = new System.Drawing.Point(3, 117);
-            this.buttonLaporan.Name = "buttonLaporan";
-            this.buttonLaporan.Size = new System.Drawing.Size(185, 33);
-            this.buttonLaporan.TabIndex = 3;
-            this.buttonLaporan.Text = "Laporan";
-            this.buttonLaporan.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -300,6 +302,7 @@ namespace TugasBesar
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDashboard";
@@ -308,14 +311,14 @@ namespace TugasBesar
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogout)).EndInit();
+            this.tableLayoutPanelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
-            this.tableLayoutPanelSidebar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);

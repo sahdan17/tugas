@@ -30,8 +30,8 @@ namespace TugasBesar
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonProduk = new System.Windows.Forms.Button();
             this.buttonPegawai = new System.Windows.Forms.Button();
+            this.buttonProduk = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,19 +51,9 @@ namespace TugasBesar
             this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 44);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // buttonProduk
-            // 
-            this.buttonProduk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduk.Location = new System.Drawing.Point(3, 3);
-            this.buttonProduk.Name = "buttonProduk";
-            this.buttonProduk.Size = new System.Drawing.Size(336, 38);
-            this.buttonProduk.TabIndex = 0;
-            this.buttonProduk.Text = "Produk";
-            this.buttonProduk.UseVisualStyleBackColor = true;
-            this.buttonProduk.Click += new System.EventHandler(this.buttonProduk_Click);
-            // 
             // buttonPegawai
             // 
+            this.buttonPegawai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPegawai.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPegawai.Location = new System.Drawing.Point(345, 3);
             this.buttonPegawai.Name = "buttonPegawai";
@@ -72,6 +62,18 @@ namespace TugasBesar
             this.buttonPegawai.Text = "Pegawai";
             this.buttonPegawai.UseVisualStyleBackColor = true;
             this.buttonPegawai.Click += new System.EventHandler(this.buttonPegawai_Click);
+            // 
+            // buttonProduk
+            // 
+            this.buttonProduk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonProduk.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProduk.Location = new System.Drawing.Point(3, 3);
+            this.buttonProduk.Name = "buttonProduk";
+            this.buttonProduk.Size = new System.Drawing.Size(336, 38);
+            this.buttonProduk.TabIndex = 0;
+            this.buttonProduk.Text = "Produk";
+            this.buttonProduk.UseVisualStyleBackColor = true;
+            this.buttonProduk.Click += new System.EventHandler(this.buttonProduk_Click);
             // 
             // panelContent
             // 

@@ -145,11 +145,23 @@
     <Compile Include="FormInternal.Designer.cs">
       <DependentUpon>FormInternal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaporan.Designer.cs">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoginAkun.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLoginAkun.Designer.cs">
       <DependentUpon>FormLoginAkun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPenjualan.Designer.cs">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormShowDataBarang.cs">
       <SubType>Form</SubType>
@@ -162,6 +174,12 @@
     </Compile>
     <Compile Include="FormShowDataPegawai.Designer.cs">
       <DependentUpon>FormShowDataPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransaksi.Designer.cs">
+      <DependentUpon>FormTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUpdateDataBarang.cs">
       <SubType>Form</SubType>
@@ -177,6 +195,7 @@
     </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="Pegawai.cs" />
+    <Compile Include="Penjualan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBeranda.resx">
@@ -206,14 +225,23 @@
     <EmbeddedResource Include="FormInternal.resx">
       <DependentUpon>FormInternal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporan.resx">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoginAkun.resx">
       <DependentUpon>FormLoginAkun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPenjualan.resx">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShowDataBarang.resx">
       <DependentUpon>FormShowDataBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShowDataPegawai.resx">
       <DependentUpon>FormShowDataPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransaksi.resx">
+      <DependentUpon>FormTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateDataBarang.resx">
       <DependentUpon>FormUpdateDataBarang.cs</DependentUpon>

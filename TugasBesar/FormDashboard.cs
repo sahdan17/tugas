@@ -20,12 +20,12 @@ namespace TugasBesar
         private void pictureBoxLogout_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            //tes
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             tableLayoutPanelSidebar.Hide();
+            this.AcceptButton = buttonLogin;
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
@@ -69,6 +69,28 @@ namespace TugasBesar
             {
                 MessageBox.Show("Username atau Password salah");
             }
+        }
+
+        private void buttonTransaksi_Click(object sender, EventArgs e)
+        {
+            FormTransaksi form3 = new FormTransaksi();
+            form3.TopLevel = false;
+            form3.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(form3);
+            form3.Show();
+            labelTitle.Text = "TRANSAKSI";
+        }
+
+        private void buttonLaporan_Click(object sender, EventArgs e)
+        {
+            FormLaporan form4 = new FormLaporan();
+            form4.TopLevel = false;
+            form4.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(form4);
+            form4.Show();
+            labelTitle.Text = "LAPORAN";
         }
     }
 }
