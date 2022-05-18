@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,17 @@ namespace TugasBesar
 {
     class Penjualan : Connection
     {
-        public int id_jual { set; get; }
+        public String id_transaksi { set; get; }
         public String tgl_jual { set; get; }
         public int total { set; get; }
         public String kode_barang { set; get; }
         public String nama_barang { set; get; }
-        public int harga_jual { set; get; }
+        public int harga_satuan { set; get; }
+        public int kuantitas_beli { set; get; }
+        public int harga_total { set; get; }
+        public String struk { set; get; }
+        public int kuantitas_jual { set; get; }
+        public int kurang { set; get; }
 
         MySqlConnection conn = Connection.conString();
         MySqlCommand cmd;
@@ -26,13 +32,39 @@ namespace TugasBesar
             cmd = new MySqlCommand();
         }
 
+        public String InsertStruk()
+        {
+            String error = null;
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "INSERT INTO daftar_transaksi VALUES (@id_transaksi, @kode_barang, @nama_barang, " +
+                "@kuantitas_beli, @harga_satuan, @harga_total)";
+            cmd.Parameters.AddWithValue("@id_transaksi", this.id_transaksi);
+            cmd.Parameters.AddWithValue("@kode_barang", this.kode_barang);
+            cmd.Parameters.AddWithValue("@nama_barang", this.nama_barang);
+            cmd.Parameters.AddWithValue("@kuantitas_beli", this.kuantitas_beli);
+            cmd.Parameters.AddWithValue("@harga_satuan", this.harga_satuan);
+            cmd.Parameters.AddWithValue("@harga_total", this.harga_total);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                error = e.Message;
+            }
+            return error;
+        }
+
         public String Insert()
         {
             String error = null;
             conn.Open();
             cmd = conn.CreateCommand();
-            cmd.CommandText = "INSERT INTO penjualan (id_jual, tgl_jual, total) VALUES (@id_jual, @tgl_jual, @total)";
-            cmd.Parameters.AddWithValue("@id_jual", this.id_jual);
+            cmd.CommandText = "INSERT INTO penjualan (id_transaksi, tgl_jual, total) VALUES (@id_transaksi, @tgl_jual, @total)";
+            cmd.Parameters.AddWithValue("@id_transaksi", this.id_transaksi);
             cmd.Parameters.AddWithValue("@tgl_jual", this.tgl_jual);
             cmd.Parameters.AddWithValue("@total", this.total);
 
@@ -48,26 +80,61 @@ namespace TugasBesar
             return error;
         }
 
-        public String ComboBox()
+        public DataTable ReadStruk()
+        {
+            DataTable dt = new DataTable();
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT kode_barang as 'Kode Barang', " +
+                "nama_barang as 'Nama Barang', kuantitas_beli as 'Kuantitas', harga_satuan as 'Harga/Barang', " +
+                "harga_total as 'Harga Total' FROM daftar_transaksi WHERE id_transaksi = '"+struk+"'";
+            cmd.Parameters.AddWithValue(struk, this.struk);
+            {
+                try
+                {
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    dt.Load(rdr);
+                }
+                catch (Exception e) { }
+            }
+            return dt;
+        }
+
+        public String KuantitasTerjual()
         {
             String error = null;
-            //cmd = conn.CreateCommand();
-            //cmd.CommandText = "SELECT kode_barang, nama_barang, harga_jual FROM data_barang";
-            /*MySqlDataReader rdr;
-            try
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "UPDATE data_barang set kuantitas_jual = @kuantitas_jual WHERE kode_barang = '"+struk+"';";
+            cmd.Parameters.AddWithValue("@kuantitas_jual", this.kuantitas_jual);
+            cmd.Parameters.AddWithValue(struk, this.struk);
             {
-                conn.Open();
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                try
                 {
-                    string name = rdr.GetString(1);
-                    string name1 = rdr.GetString(2);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
+                catch (Exception e) { }
             }
-            catch (Exception e)
+            return error;
+        }
+
+        public String KuantitasKurang()
+        {
+            String error = null;
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "UPDATE data_barang set kuantitas_barang = @kurang WHERE kode_barang = '" + struk + "';";
+            cmd.Parameters.AddWithValue("@kurang", this.kurang);
+            cmd.Parameters.AddWithValue(struk, this.struk);
             {
-                MessageBox.Show(e.Message);
-            }*/
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (Exception e) { }
+            }
             return error;
         }
     }

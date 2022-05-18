@@ -93,3 +93,6 @@ C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.pdb
 C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormTransaksi.resources
 C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormLaporan.resources
 C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormPenjualan.resources
+C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormPegawai.resources
+C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormService.resources
+C:\Users\Sahdan Wira\source\repos\github\TugasBesar\obj\Debug\TugasBesar.FormProduk.resources

@@ -157,11 +157,29 @@
     <Compile Include="FormLoginAkun.Designer.cs">
       <DependentUpon>FormLoginAkun.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPegawai.Designer.cs">
+      <DependentUpon>FormPegawai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPenjualan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPenjualan.Designer.cs">
       <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduk.Designer.cs">
+      <DependentUpon>FormProduk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService.Designer.cs">
+      <DependentUpon>FormService.cs</DependentUpon>
     </Compile>
     <Compile Include="FormShowDataBarang.cs">
       <SubType>Form</SubType>
@@ -198,6 +216,7 @@
     <Compile Include="Penjualan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
     <EmbeddedResource Include="FormBeranda.resx">
       <DependentUpon>FormBeranda.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,8 +250,17 @@
     <EmbeddedResource Include="FormLoginAkun.resx">
       <DependentUpon>FormLoginAkun.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPegawai.resx">
+      <DependentUpon>FormPegawai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPenjualan.resx">
       <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduk.resx">
+      <DependentUpon>FormProduk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService.resx">
+      <DependentUpon>FormService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShowDataBarang.resx">
       <DependentUpon>FormShowDataBarang.cs</DependentUpon>

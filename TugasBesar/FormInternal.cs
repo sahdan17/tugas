@@ -19,7 +19,7 @@ namespace TugasBesar
 
         private void buttonProduk_Click(object sender, EventArgs e)
         {
-            FormDataBarang form2a = new FormDataBarang();
+            FormProduk form2a = new FormProduk();
             form2a.TopLevel = false;
             form2a.AutoScroll = true;
             this.panelContent.Controls.Clear();
@@ -29,7 +29,7 @@ namespace TugasBesar
 
         private void buttonPegawai_Click(object sender, EventArgs e)
         {
-            FormDataPegawai form2b = new FormDataPegawai();
+            FormPegawai form2b = new FormPegawai();
             form2b.TopLevel = false;
             form2b.AutoScroll = true;
             this.panelContent.Controls.Clear();

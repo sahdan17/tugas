@@ -40,6 +40,7 @@ namespace TugasBesar
             this.dataGridViewBarang.Name = "dataGridViewBarang";
             this.dataGridViewBarang.Size = new System.Drawing.Size(659, 337);
             this.dataGridViewBarang.TabIndex = 0;
+            this.dataGridViewBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBarang_CellContentClick);
             // 
             // FormShowDataBarang
             // 

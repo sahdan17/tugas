@@ -64,6 +64,7 @@ namespace TugasBesar
             this.buttonService.TabIndex = 1;
             this.buttonService.Text = "Service";
             this.buttonService.UseVisualStyleBackColor = true;
+            this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
             // 
             // buttonPenjualan
             // 

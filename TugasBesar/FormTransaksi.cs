@@ -27,5 +27,16 @@ namespace TugasBesar
             form31.Show();
             labelTitle.Text = "Penjualan";
         }
+
+        private void buttonService_Click(object sender, EventArgs e)
+        {
+            FormService form32 = new FormService();
+            form32.TopLevel = false;
+            form32.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(form32);
+            form32.Show();
+            labelTitle.Text = "Service";
+        }
     }
 }

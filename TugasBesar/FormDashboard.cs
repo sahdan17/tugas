@@ -25,7 +25,6 @@ namespace TugasBesar
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             tableLayoutPanelSidebar.Hide();
-            this.AcceptButton = buttonLogin;
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)

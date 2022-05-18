@@ -25,5 +25,10 @@ namespace TugasBesar
             dataGridViewBarang.DataSource = dt;
             dataGridViewBarang.Show();
         }
+
+        private void dataGridViewBarang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
