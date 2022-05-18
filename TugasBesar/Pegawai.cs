@@ -10,7 +10,6 @@ namespace TugasBesar
 {
     class Pegawai : Connection
     {
-        public int id_pegawai { set; get; }
         public String nama_pegawai { set; get; }
         public String tempat_lahir { set; get; }
         public String tanggal_lahir { set; get; }
@@ -52,23 +51,6 @@ namespace TugasBesar
             return error;
         }
 
-        public DataTable Read()
-        {
-            DataTable dt = new DataTable();
-            conn.Open();
-            cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM data_pegawai";
-            {
-                try
-                {
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    dt.Load(rdr);
-                }
-                catch(Exception e) { }
-            }
-            return dt;
-        }
-
         public String Delete()
         {
             String result = null;
@@ -88,26 +70,6 @@ namespace TugasBesar
             }
             return result;
         }
-
-        /*public String Delete()
-        {
-            String result = null;
-            conn.Open();
-            using (MySqlCommand cmd = new MySqlCommand("DELETE FROM data_pegawai WHERE id_pegawai = @id_pegawai", conn))
-            {
-                cmd.Parameters.AddWithValue("@id_pegawai", this.id_pegawai);
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                }
-                catch (Exception e)
-                {
-                    return e.Message;
-                }
-            }
-            return result;
-        }*/
 
         public String Update()
         {
@@ -133,30 +95,5 @@ namespace TugasBesar
             }
             return result;
         }
-
-        /*public String Update()
-        {
-            string result = null;
-            conn.Open();
-            cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE data_pegawai set nama_pegawai = @nama_pegawai, tempat_lahir = @tempat_lahir, tanggal_lahir = @tanggal_lahir, " +
-                "agama = @agama, alamat = @alamat WHERE id_pegawai = @id_pegawai";
-            cmd.Parameters.AddWithValue("@nama_pegawai", this.nama_pegawai);
-            cmd.Parameters.AddWithValue("@tempat_lahir", this.tempat_lahir);
-            cmd.Parameters.AddWithValue("@tanggal_lahir", this.tanggal_lahir);
-            cmd.Parameters.AddWithValue("@agama", this.agama);
-            cmd.Parameters.AddWithValue("@alamat", this.alamat);
-            cmd.Parameters.AddWithValue("@id_pegawai", this.id_pegawai);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-            return result;
-        }*/
     }
 }

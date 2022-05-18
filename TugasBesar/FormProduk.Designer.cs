@@ -52,18 +52,18 @@ namespace TugasBesar
             this.labelKuantitas = new System.Windows.Forms.Label();
             this.comboBoxSatuan = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxHargaJual = new System.Windows.Forms.TextBox();
+            this.textBoxHargaBeli = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxHargaBeli = new System.Windows.Forms.TextBox();
-            this.textBoxHargaJual = new System.Windows.Forms.TextBox();
-            this.buttonTambahStok = new System.Windows.Forms.Button();
-            this.dataGridViewDaftar = new System.Windows.Forms.DataGridView();
+            this.comboBoxKode = new System.Windows.Forms.ComboBox();
+            this.labelTambahStok = new System.Windows.Forms.Label();
             this.buttonStokCancel = new System.Windows.Forms.Button();
             this.buttonStokOK = new System.Windows.Forms.Button();
-            this.labelTambahStok = new System.Windows.Forms.Label();
-            this.comboBoxKode = new System.Windows.Forms.ComboBox();
+            this.dataGridViewDaftar = new System.Windows.Forms.DataGridView();
+            this.buttonTambahStok = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftar)).BeginInit();
@@ -354,6 +354,34 @@ namespace TugasBesar
             this.tableLayoutPanel1.Size = new System.Drawing.Size(511, 164);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
+            // textBoxHargaJual
+            // 
+            this.textBoxHargaJual.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHargaJual.Location = new System.Drawing.Point(142, 84);
+            this.textBoxHargaJual.Name = "textBoxHargaJual";
+            this.textBoxHargaJual.ReadOnly = true;
+            this.textBoxHargaJual.Size = new System.Drawing.Size(366, 22);
+            this.textBoxHargaJual.TabIndex = 33;
+            // 
+            // textBoxHargaBeli
+            // 
+            this.textBoxHargaBeli.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHargaBeli.Location = new System.Drawing.Point(142, 57);
+            this.textBoxHargaBeli.Name = "textBoxHargaBeli";
+            this.textBoxHargaBeli.ReadOnly = true;
+            this.textBoxHargaBeli.Size = new System.Drawing.Size(366, 22);
+            this.textBoxHargaBeli.TabIndex = 32;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 15);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Satuan";
+            // 
             // textBoxNama
             // 
             this.textBoxNama.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,54 +431,28 @@ namespace TugasBesar
             this.panelContent.Size = new System.Drawing.Size(684, 443);
             this.panelContent.TabIndex = 17;
             // 
-            // label7
+            // comboBoxKode
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Satuan";
+            this.comboBoxKode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxKode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxKode.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKode.FormattingEnabled = true;
+            this.comboBoxKode.Location = new System.Drawing.Point(356, 12);
+            this.comboBoxKode.Name = "comboBoxKode";
+            this.comboBoxKode.Size = new System.Drawing.Size(123, 23);
+            this.comboBoxKode.TabIndex = 37;
+            this.comboBoxKode.SelectedIndexChanged += new System.EventHandler(this.comboBoxKode_SelectedIndexChanged);
             // 
-            // textBoxHargaBeli
+            // labelTambahStok
             // 
-            this.textBoxHargaBeli.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHargaBeli.Location = new System.Drawing.Point(142, 57);
-            this.textBoxHargaBeli.Name = "textBoxHargaBeli";
-            this.textBoxHargaBeli.ReadOnly = true;
-            this.textBoxHargaBeli.Size = new System.Drawing.Size(366, 22);
-            this.textBoxHargaBeli.TabIndex = 32;
-            // 
-            // textBoxHargaJual
-            // 
-            this.textBoxHargaJual.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHargaJual.Location = new System.Drawing.Point(142, 84);
-            this.textBoxHargaJual.Name = "textBoxHargaJual";
-            this.textBoxHargaJual.ReadOnly = true;
-            this.textBoxHargaJual.Size = new System.Drawing.Size(366, 22);
-            this.textBoxHargaJual.TabIndex = 33;
-            // 
-            // buttonTambahStok
-            // 
-            this.buttonTambahStok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTambahStok.Enabled = false;
-            this.buttonTambahStok.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahStok.Location = new System.Drawing.Point(240, 208);
-            this.buttonTambahStok.Name = "buttonTambahStok";
-            this.buttonTambahStok.Size = new System.Drawing.Size(89, 26);
-            this.buttonTambahStok.TabIndex = 32;
-            this.buttonTambahStok.Text = "Tambah Stok";
-            this.buttonTambahStok.UseVisualStyleBackColor = true;
-            this.buttonTambahStok.Click += new System.EventHandler(this.buttonTambahStok_Click);
-            // 
-            // dataGridViewDaftar
-            // 
-            this.dataGridViewDaftar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftar.Location = new System.Drawing.Point(12, 288);
-            this.dataGridViewDaftar.Name = "dataGridViewDaftar";
-            this.dataGridViewDaftar.Size = new System.Drawing.Size(660, 143);
-            this.dataGridViewDaftar.TabIndex = 33;
+            this.labelTambahStok.AutoSize = true;
+            this.labelTambahStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTambahStok.Location = new System.Drawing.Point(487, 236);
+            this.labelTambahStok.Name = "labelTambahStok";
+            this.labelTambahStok.Size = new System.Drawing.Size(122, 16);
+            this.labelTambahStok.TabIndex = 36;
+            this.labelTambahStok.Text = "Data sudah benar?";
+            this.labelTambahStok.Visible = false;
             // 
             // buttonStokCancel
             // 
@@ -478,28 +480,26 @@ namespace TugasBesar
             this.buttonStokOK.Visible = false;
             this.buttonStokOK.Click += new System.EventHandler(this.buttonStokOK_Click);
             // 
-            // labelTambahStok
+            // dataGridViewDaftar
             // 
-            this.labelTambahStok.AutoSize = true;
-            this.labelTambahStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTambahStok.Location = new System.Drawing.Point(487, 236);
-            this.labelTambahStok.Name = "labelTambahStok";
-            this.labelTambahStok.Size = new System.Drawing.Size(122, 16);
-            this.labelTambahStok.TabIndex = 36;
-            this.labelTambahStok.Text = "Data sudah benar?";
-            this.labelTambahStok.Visible = false;
+            this.dataGridViewDaftar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDaftar.Location = new System.Drawing.Point(12, 288);
+            this.dataGridViewDaftar.Name = "dataGridViewDaftar";
+            this.dataGridViewDaftar.Size = new System.Drawing.Size(660, 143);
+            this.dataGridViewDaftar.TabIndex = 33;
             // 
-            // comboBoxKode
+            // buttonTambahStok
             // 
-            this.comboBoxKode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxKode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxKode.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxKode.FormattingEnabled = true;
-            this.comboBoxKode.Location = new System.Drawing.Point(356, 12);
-            this.comboBoxKode.Name = "comboBoxKode";
-            this.comboBoxKode.Size = new System.Drawing.Size(123, 23);
-            this.comboBoxKode.TabIndex = 37;
-            this.comboBoxKode.SelectedIndexChanged += new System.EventHandler(this.comboBoxKode_SelectedIndexChanged);
+            this.buttonTambahStok.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTambahStok.Enabled = false;
+            this.buttonTambahStok.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTambahStok.Location = new System.Drawing.Point(240, 208);
+            this.buttonTambahStok.Name = "buttonTambahStok";
+            this.buttonTambahStok.Size = new System.Drawing.Size(89, 26);
+            this.buttonTambahStok.TabIndex = 32;
+            this.buttonTambahStok.Text = "Tambah Stok";
+            this.buttonTambahStok.UseVisualStyleBackColor = true;
+            this.buttonTambahStok.Click += new System.EventHandler(this.buttonTambahStok_Click);
             // 
             // FormProduk
             // 

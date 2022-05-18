@@ -69,7 +69,6 @@ namespace TugasBesar
             this.label1.Size = new System.Drawing.Size(124, 23);
             this.label1.TabIndex = 16;
             this.label1.Text = "Data Pegawai";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -97,7 +96,6 @@ namespace TugasBesar
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(511, 162);
             this.tableLayoutPanel1.TabIndex = 17;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // textBoxAlamat
             // 
@@ -107,7 +105,6 @@ namespace TugasBesar
             this.textBoxAlamat.ReadOnly = true;
             this.textBoxAlamat.Size = new System.Drawing.Size(366, 26);
             this.textBoxAlamat.TabIndex = 10;
-            this.textBoxAlamat.TextChanged += new System.EventHandler(this.textBoxAlamat_TextChanged);
             // 
             // textBoxTmptLahir
             // 
@@ -117,7 +114,6 @@ namespace TugasBesar
             this.textBoxTmptLahir.ReadOnly = true;
             this.textBoxTmptLahir.Size = new System.Drawing.Size(366, 26);
             this.textBoxTmptLahir.TabIndex = 7;
-            this.textBoxTmptLahir.TextChanged += new System.EventHandler(this.textBoxTmptLahir_TextChanged);
             // 
             // label2
             // 
@@ -128,7 +124,6 @@ namespace TugasBesar
             this.label2.Size = new System.Drawing.Size(101, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nama Pegawai";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -139,7 +134,6 @@ namespace TugasBesar
             this.label3.Size = new System.Drawing.Size(90, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tanggal Lahir";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -150,7 +144,6 @@ namespace TugasBesar
             this.label4.Size = new System.Drawing.Size(89, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tempat Lahir";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -161,7 +154,6 @@ namespace TugasBesar
             this.label5.Size = new System.Drawing.Size(52, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Agama";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -172,7 +164,6 @@ namespace TugasBesar
             this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 4;
             this.label6.Text = "Alamat";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateTimePickerTglLahir
             // 
@@ -182,7 +173,6 @@ namespace TugasBesar
             this.dateTimePickerTglLahir.Name = "dateTimePickerTglLahir";
             this.dateTimePickerTglLahir.Size = new System.Drawing.Size(366, 26);
             this.dateTimePickerTglLahir.TabIndex = 11;
-            this.dateTimePickerTglLahir.ValueChanged += new System.EventHandler(this.dateTimePickerTglLahir_ValueChanged);
             // 
             // comboBoxAgama
             // 
@@ -201,7 +191,6 @@ namespace TugasBesar
             this.comboBoxAgama.Size = new System.Drawing.Size(366, 27);
             this.comboBoxAgama.TabIndex = 12;
             this.comboBoxAgama.Text = "Islam";
-            this.comboBoxAgama.SelectedIndexChanged += new System.EventHandler(this.comboBoxAgama_SelectedIndexChanged);
             // 
             // textBoxNama
             // 
@@ -211,7 +200,6 @@ namespace TugasBesar
             this.textBoxNama.ReadOnly = true;
             this.textBoxNama.Size = new System.Drawing.Size(366, 26);
             this.textBoxNama.TabIndex = 6;
-            this.textBoxNama.TextChanged += new System.EventHandler(this.textBoxNama_TextChanged);
             // 
             // buttonDelete
             // 
@@ -255,37 +243,34 @@ namespace TugasBesar
             // 
             this.labelTambah.AutoSize = true;
             this.labelTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTambah.Location = new System.Drawing.Point(510, 345);
+            this.labelTambah.Location = new System.Drawing.Point(509, 346);
             this.labelTambah.Name = "labelTambah";
             this.labelTambah.Size = new System.Drawing.Size(122, 16);
             this.labelTambah.TabIndex = 21;
             this.labelTambah.Text = "Data sudah benar?";
             this.labelTambah.Visible = false;
-            this.labelTambah.Click += new System.EventHandler(this.labelTambah_Click);
             // 
             // labelUpdate
             // 
             this.labelUpdate.AutoSize = true;
             this.labelUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdate.Location = new System.Drawing.Point(526, 345);
+            this.labelUpdate.Location = new System.Drawing.Point(525, 346);
             this.labelUpdate.Name = "labelUpdate";
             this.labelUpdate.Size = new System.Drawing.Size(106, 16);
             this.labelUpdate.TabIndex = 22;
             this.labelUpdate.Text = "Update data ini?";
             this.labelUpdate.Visible = false;
-            this.labelUpdate.Click += new System.EventHandler(this.labelUpdate_Click);
             // 
             // labelDelete
             // 
             this.labelDelete.AutoSize = true;
             this.labelDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelete.Location = new System.Drawing.Point(482, 345);
+            this.labelDelete.Location = new System.Drawing.Point(481, 346);
             this.labelDelete.Name = "labelDelete";
             this.labelDelete.Size = new System.Drawing.Size(150, 16);
             this.labelDelete.TabIndex = 23;
             this.labelDelete.Text = "Yakin ingin hapus data?";
             this.labelDelete.Visible = false;
-            this.labelDelete.Click += new System.EventHandler(this.labelDelete_Click);
             // 
             // buttonTambahOK
             // 
@@ -400,7 +385,6 @@ namespace TugasBesar
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(684, 443);
             this.panelContent.TabIndex = 16;
-            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // comboBoxID
             // 

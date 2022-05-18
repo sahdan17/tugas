@@ -103,42 +103,6 @@
     <Compile Include="FormDashboard.Designer.cs">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDataBarang.Designer.cs">
-      <DependentUpon>FormDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDataPegawai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDataPegawai.Designer.cs">
-      <DependentUpon>FormDataPegawai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeleteDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeleteDataBarang.Designer.cs">
-      <DependentUpon>FormDeleteDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeleteDataPegawai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeleteDataPegawai.Designer.cs">
-      <DependentUpon>FormDeleteDataPegawai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormInputDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormInputDataBarang.Designer.cs">
-      <DependentUpon>FormInputDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormInputDataPegawai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormInputDataPegawai.Designer.cs">
-      <DependentUpon>FormInputDataPegawai.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormInternal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,35 +145,11 @@
     <Compile Include="FormService.Designer.cs">
       <DependentUpon>FormService.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormShowDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormShowDataBarang.Designer.cs">
-      <DependentUpon>FormShowDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormShowDataPegawai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormShowDataPegawai.Designer.cs">
-      <DependentUpon>FormShowDataPegawai.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTransaksi.Designer.cs">
       <DependentUpon>FormTransaksi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormUpdateDataBarang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUpdateDataBarang.Designer.cs">
-      <DependentUpon>FormUpdateDataBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormUpdateDataPegawai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUpdateDataPegawai.Designer.cs">
-      <DependentUpon>FormUpdateDataPegawai.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="Pegawai.cs" />
@@ -222,24 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDataBarang.resx">
-      <DependentUpon>FormDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDataPegawai.resx">
-      <DependentUpon>FormDataPegawai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDeleteDataBarang.resx">
-      <DependentUpon>FormDeleteDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDeleteDataPegawai.resx">
-      <DependentUpon>FormDeleteDataPegawai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormInputDataBarang.resx">
-      <DependentUpon>FormInputDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormInputDataPegawai.resx">
-      <DependentUpon>FormInputDataPegawai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternal.resx">
       <DependentUpon>FormInternal.cs</DependentUpon>
@@ -262,20 +184,8 @@
     <EmbeddedResource Include="FormService.resx">
       <DependentUpon>FormService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormShowDataBarang.resx">
-      <DependentUpon>FormShowDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormShowDataPegawai.resx">
-      <DependentUpon>FormShowDataPegawai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTransaksi.resx">
       <DependentUpon>FormTransaksi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateDataBarang.resx">
-      <DependentUpon>FormUpdateDataBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateDataPegawai.resx">
-      <DependentUpon>FormUpdateDataPegawai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

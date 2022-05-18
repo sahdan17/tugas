@@ -85,9 +85,9 @@ namespace TugasBesar
             DataTable dt = new DataTable();
             conn.Open();
             cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT kode_barang as 'Kode Barang', " +
-                "nama_barang as 'Nama Barang', kuantitas_beli as 'Kuantitas', harga_satuan as 'Harga/Barang', " +
-                "harga_total as 'Harga Total' FROM daftar_transaksi WHERE id_transaksi = '"+struk+"'";
+            cmd.CommandText = "SELECT kode_barang as 'Kode Barang', nama_barang as 'Nama Barang', kuantitas_beli as 'Kuantitas', " +
+                "harga_satuan as 'Harga/Barang', harga_total as 'Harga Total' FROM daftar_transaksi " +
+                "WHERE id_transaksi = '"+struk+"'";
             cmd.Parameters.AddWithValue(struk, this.struk);
             {
                 try
