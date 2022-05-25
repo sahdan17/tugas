@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace TugasBesar
         int qty_beli;
         int qty_akhir;
 
+        String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
+        
         public FormProduk()
         {
             InitializeComponent();
@@ -24,9 +27,7 @@ namespace TugasBesar
 
         private void buttonTambahStok_Click(object sender, EventArgs e)
         {
-            labelTambahStok.Visible = true;
-            buttonStokCancel.Visible = true;
-            buttonStokOK.Visible = true;
+            panelTambahStok.Visible = true;
             textBoxKuantitas.ReadOnly = false;
             textBoxKuantitas.Text = null;
             buttonDelete.Enabled = false;
@@ -34,39 +35,41 @@ namespace TugasBesar
             buttonTambahStok.Enabled = false;
             buttonTambahData.Enabled = false;
             labelKuantitas.Text = "Kuantitas Tambah";
+            comboBoxKode.Enabled = false;
+            comboBoxSearch.Enabled = false;
         }
 
         private void buttonTambahData_Click(object sender, EventArgs e)
         {
-            labelTambah.Visible = true;
-            buttonTambahOK.Visible = true;
-            buttonTambahCancel.Visible = true;
+            panelTambah.Visible = true;
             buttonTambahData.Enabled = false;
             NewInput();
             NewLine();
+            comboBoxKode.Enabled = false;
+            comboBoxSearch.Enabled = false;
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            labelUpdate.Visible = true;
-            buttonUpdateCancel.Visible = true;
-            buttonUpdateOK.Visible = true;
+            panelUpdate.Visible = true;
             NewInput();
             buttonTambahData.Enabled = false;
             buttonTambahStok.Enabled = false;
             buttonUpdate.Enabled = false;
             buttonDelete.Enabled = false;
+            comboBoxKode.Enabled = false;
+            comboBoxSearch.Enabled = false;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            labelDelete.Visible = true;
-            buttonDeleteCancel.Visible = true;
-            buttonDeleteOK.Visible = true;
+            panelDelete.Visible = true;
             buttonTambahData.Enabled = false;
             buttonTambahStok.Enabled = false;
             buttonUpdate.Enabled = false;
             buttonDelete.Enabled = false;
+            comboBoxKode.Enabled = false;
+            comboBoxSearch.Enabled = false;
         }
 
         private void buttonStokOK_Click(object sender, EventArgs e)
@@ -81,33 +84,12 @@ namespace TugasBesar
             if (response == null) MessageBox.Show("Input data sukses");
             else MessageBox.Show("Input data gagal " + response);
 
-            NewLine();
-            OffInput();
             DataLoad();
-            ReadData();
-            buttonDelete.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonTambahStok.Enabled = false;
-            buttonTambahData.Enabled = true;
-            buttonTambahData.Enabled = true;
-            labelKuantitas.Text = "Kuantitas Barang";
-            labelTambahStok.Visible = false;
-            buttonStokCancel.Visible = false;
-            buttonStokOK.Visible = false;
         }
 
         private void buttonStokCancel_Click(object sender, EventArgs e)
         {
-            NewLine();
-            OffInput();
-            buttonDelete.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonTambahStok.Enabled = false;
-            buttonTambahData.Enabled = true;
-            labelKuantitas.Text = "Kuantitas Barang";
-            labelTambahStok.Visible = false;
-            buttonStokCancel.Visible = false;
-            buttonStokOK.Visible = false;
+            DataLoad();
         }
 
         private void buttonTambahOK_Click(object sender, EventArgs e)
@@ -126,23 +108,11 @@ namespace TugasBesar
             else MessageBox.Show("Input data gagal " + response);
 
             DataLoad();
-            ReadData();
-            OffInput();
-            NewLine();
-            labelTambah.Visible = false;
-            buttonTambahOK.Visible = false;
-            buttonTambahCancel.Visible = false;
-            buttonTambahData.Enabled = true;
         }
 
         private void buttonTambahCancel_Click(object sender, EventArgs e)
         {
-            NewLine();
-            OffInput();
-            labelTambah.Visible = false;
-            buttonTambahOK.Visible = false;
-            buttonTambahCancel.Visible = false;
-            buttonTambahData.Enabled = true;
+            DataLoad();
         }
 
         private void buttonUpdateOK_Click(object sender, EventArgs e)
@@ -162,29 +132,11 @@ namespace TugasBesar
             else MessageBox.Show("Input data gagal " + response);
 
             DataLoad();
-            ReadData();
-            NewLine();
-            OffInput();
-            labelUpdate.Visible = false;
-            buttonUpdateOK.Visible = false;
-            buttonUpdateCancel.Visible = false;
-            buttonTambahData.Enabled = true;
-            buttonTambahStok.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
         }
 
         private void buttonUpdateCancel_Click(object sender, EventArgs e)
         {
-            NewLine();
-            OffInput();
-            labelUpdate.Visible = false;
-            buttonUpdateOK.Visible = false;
-            buttonUpdateCancel.Visible = false;
-            buttonTambahData.Enabled = true;
-            buttonTambahStok.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+            DataLoad();
         }
 
         private void buttonDeleteOK_Click(object sender, EventArgs e)
@@ -198,34 +150,16 @@ namespace TugasBesar
             else MessageBox.Show("Input data gagal " + response);
 
             DataLoad();
-            ReadData();
-            NewLine();
-            OffInput();
-            labelDelete.Visible = false;
-            buttonDeleteOK.Visible = false;
-            buttonDeleteCancel.Visible = false;
-            buttonTambahData.Enabled = true;
-            buttonTambahStok.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
         }
 
         private void buttonDeleteCancel_Click(object sender, EventArgs e)
         {
-            NewLine();
-            OffInput();
-            labelDelete.Visible = false;
-            buttonDeleteOK.Visible = false;
-            buttonDeleteCancel.Visible = false;
-            buttonTambahData.Enabled = true;
-            buttonTambahStok.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+            DataLoad();
         }
 
         public void Combobox()
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT nama_barang, kode_barang, id_barang FROM data_barang", conn);
             MySqlDataReader rdr;
             try
@@ -250,7 +184,7 @@ namespace TugasBesar
 
         private void comboBoxSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT id_barang, kode_barang " +
                 "FROM data_barang WHERE nama_barang = '" + comboBoxSearch.Text + "';", conn);
             MySqlDataReader rdr;
@@ -274,7 +208,7 @@ namespace TugasBesar
 
         private void comboBoxKode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT nama_barang, id_barang " +
                 "FROM data_barang WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
             MySqlDataReader rdr;
@@ -298,7 +232,7 @@ namespace TugasBesar
 
         private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT kode_barang, nama_barang, harga_beli, harga_jual, kuantitas_barang, satuan_barang " +
                 "FROM data_barang WHERE id_barang = '" + comboBoxID.Text + "';", conn);
             MySqlDataReader rdr;
@@ -347,16 +281,6 @@ namespace TugasBesar
             comboBoxSatuan.Enabled = true;
         }
 
-        private void OffInput()
-        {
-            textBoxKode.ReadOnly = true;
-            textBoxNama.ReadOnly = true;
-            textBoxHargaBeli.ReadOnly = true;
-            textBoxHargaJual.ReadOnly = true;
-            textBoxKuantitas.ReadOnly = true;
-            comboBoxSatuan.Enabled = false;
-        }
-
         private void NewLine()
         {
             textBoxKode.Text = null;
@@ -372,7 +296,7 @@ namespace TugasBesar
 
         private void Tambah()
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_barang FROM data_barang WHERE id_barang = '" + comboBoxID.Text + "';", conn);
             MySqlDataReader rdr;
             try

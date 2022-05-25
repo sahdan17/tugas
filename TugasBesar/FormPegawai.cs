@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace TugasBesar
 {
     public partial class FormPegawai : Form
     {
+        String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
         public FormPegawai()
         {
             InitializeComponent();
@@ -20,52 +22,31 @@ namespace TugasBesar
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            labelTambah.Visible = true;
-            buttonTambahCancel.Visible = true;
-            buttonTambahOK.Visible = true;
-
+            panelTambah.Visible = true;
+            comboBoxSearch.Enabled = false;
             NewLine();
             NewInput();
-
-            buttonTambah.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+            OffButton();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            labelUpdate.Visible = true;
-            buttonUpdateCancel.Visible = true;
-            buttonUpdateOK.Visible = true;
-
-            buttonTambah.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
-
+            panelUpdate.Visible = true;
+            comboBoxSearch.Enabled = false;
+            OffButton();
             NewInput();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            labelDelete.Visible = true;
-            buttonDeleteCancel.Visible = true;
-            buttonDeleteOK.Visible = true;
-
-            buttonTambah.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+            panelDelete.Visible = true;
+            comboBoxSearch.Enabled = false;
+            OffButton();
         }
 
         private void buttonTambahCancel_Click(object sender, EventArgs e)
         {
-            labelTambah.Visible = false;
-            buttonTambahCancel.Visible = false;
-            buttonTambahOK.Visible = false;
-
-            NewLine();
-            OffInput();
-
-            buttonTambah.Enabled = true;
+            DataLoad();
         }
 
         private void buttonTambahOK_Click(object sender, EventArgs e)
@@ -87,16 +68,7 @@ namespace TugasBesar
 
         private void buttonUpdateCancel_Click(object sender, EventArgs e)
         {
-            labelUpdate.Visible = false;
-            buttonUpdateCancel.Visible = false;
-            buttonUpdateOK.Visible = false;
-
-            OffInput();
-            NewLine();
-
-            buttonTambah.Enabled = true;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+            DataLoad();
         }
 
         private void buttonUpdateOK_Click(object sender, EventArgs e)
@@ -118,13 +90,7 @@ namespace TugasBesar
 
         private void buttonDeleteCancel_Click(object sender, EventArgs e)
         {
-            labelDelete.Visible = false;
-            buttonDeleteCancel.Visible = false;
-            buttonDeleteOK.Visible = false;
-
-            buttonTambah.Enabled = true;
-            buttonUpdate.Enabled = true;
-            buttonDelete.Enabled = true;
+            DataLoad();
         }
 
         private void buttonDeleteOK_Click(object sender, EventArgs e)
@@ -141,7 +107,7 @@ namespace TugasBesar
 
         public void Combobox()
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT nama_pegawai, id_pegawai FROM data_pegawai", conn);
             MySqlDataReader rdr;
             try
@@ -169,7 +135,7 @@ namespace TugasBesar
 
         private void comboBoxSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT id_pegawai " +
                 "FROM data_pegawai WHERE nama_pegawai = '" + comboBoxSearch.Text + "';", conn);
             MySqlDataReader rdr;
@@ -210,13 +176,11 @@ namespace TugasBesar
             textBoxAlamat.ReadOnly = false;
         }
 
-        private void OffInput()
+        private void OffButton()
         {
-            textBoxNama.ReadOnly = true;
-            textBoxTmptLahir.ReadOnly = true;
-            dateTimePickerTglLahir.Enabled = false;
-            comboBoxAgama.Enabled = false;
-            textBoxAlamat.ReadOnly = true;
+            buttonTambah.Enabled = false;
+            buttonUpdate.Enabled = false;
+            buttonDelete.Enabled = false;
         }
 
         private void DataLoad()
@@ -231,7 +195,7 @@ namespace TugasBesar
 
         private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = Connection.conString();
+            MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT nama_pegawai, tempat_lahir, tanggal_lahir, agama, alamat " +
                 "FROM data_pegawai WHERE id_pegawai = '" + comboBoxID.Text + "';", conn);
             MySqlDataReader rdr;
@@ -259,6 +223,7 @@ namespace TugasBesar
             }
             buttonUpdate.Enabled = true;
             buttonDelete.Enabled = true;
+            buttonTambah.Enabled = false;
         }
     }
 }

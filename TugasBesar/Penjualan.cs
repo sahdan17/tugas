@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,12 @@ using System.Windows.Forms;
 
 namespace TugasBesar
 {
-    class Penjualan : Connection
+    class Penjualan
     {
+        protected static String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
+        static MySqlConnection conn;
+        static MySqlCommand cmd;
+
         public String id_transaksi { set; get; }
         public String tgl_jual { set; get; }
         public int total { set; get; }
@@ -23,12 +28,9 @@ namespace TugasBesar
         public int kuantitas_jual { set; get; }
         public int kurang { set; get; }
 
-        MySqlConnection conn = Connection.conString();
-        MySqlCommand cmd;
-
         public Penjualan()
         {
-            MySqlConnection conn = Connection.conString();
+            conn = new MySqlConnection(conString);
             cmd = new MySqlCommand();
         }
 

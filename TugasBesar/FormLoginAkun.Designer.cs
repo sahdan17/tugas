@@ -36,7 +36,7 @@ namespace TugasBesar
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.panelContent = new System.Windows.Forms.Panel();
+            this.buttonTutup = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@ namespace TugasBesar
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Baskerville Old Face", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 134);
+            this.label5.Location = new System.Drawing.Point(132, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 43);
             this.label5.TabIndex = 12;
@@ -54,12 +54,13 @@ namespace TugasBesar
             // 
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.panel3.Controls.Add(this.buttonTutup);
             this.panel3.Controls.Add(this.textBoxPassword);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.textBoxUsername);
             this.panel3.Controls.Add(this.buttonLogin);
-            this.panel3.Location = new System.Drawing.Point(141, 190);
+            this.panel3.Location = new System.Drawing.Point(8, 65);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(402, 162);
             this.panel3.TabIndex = 11;
@@ -114,24 +115,29 @@ namespace TugasBesar
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // panelContent
+            // buttonTutup
             // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(684, 487);
-            this.panelContent.TabIndex = 13;
+            this.buttonTutup.BackColor = System.Drawing.Color.White;
+            this.buttonTutup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTutup.Location = new System.Drawing.Point(231, 121);
+            this.buttonTutup.Name = "buttonTutup";
+            this.buttonTutup.Size = new System.Drawing.Size(75, 28);
+            this.buttonTutup.TabIndex = 5;
+            this.buttonTutup.Text = "TUTUP";
+            this.buttonTutup.UseVisualStyleBackColor = false;
+            this.buttonTutup.Click += new System.EventHandler(this.buttonTutup_Click);
             // 
             // FormLoginAkun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 487);
+            this.ClientSize = new System.Drawing.Size(420, 240);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLoginAkun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLoginAkun";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -149,6 +155,6 @@ namespace TugasBesar
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button buttonTutup;
     }
 }

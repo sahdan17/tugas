@@ -56,8 +56,14 @@ namespace TugasBesar
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.comboBoxID = new System.Windows.Forms.ComboBox();
+            this.panelUpdate = new System.Windows.Forms.Panel();
+            this.panelTambah = new System.Windows.Forms.Panel();
+            this.panelDelete = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
+            this.panelUpdate.SuspendLayout();
+            this.panelTambah.SuspendLayout();
+            this.panelDelete.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -243,111 +249,102 @@ namespace TugasBesar
             // 
             this.labelTambah.AutoSize = true;
             this.labelTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTambah.Location = new System.Drawing.Point(509, 346);
+            this.labelTambah.Location = new System.Drawing.Point(40, 0);
             this.labelTambah.Name = "labelTambah";
             this.labelTambah.Size = new System.Drawing.Size(122, 16);
             this.labelTambah.TabIndex = 21;
             this.labelTambah.Text = "Data sudah benar?";
-            this.labelTambah.Visible = false;
             // 
             // labelUpdate
             // 
             this.labelUpdate.AutoSize = true;
             this.labelUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdate.Location = new System.Drawing.Point(525, 346);
+            this.labelUpdate.Location = new System.Drawing.Point(53, 0);
             this.labelUpdate.Name = "labelUpdate";
             this.labelUpdate.Size = new System.Drawing.Size(106, 16);
             this.labelUpdate.TabIndex = 22;
             this.labelUpdate.Text = "Update data ini?";
-            this.labelUpdate.Visible = false;
             // 
             // labelDelete
             // 
             this.labelDelete.AutoSize = true;
             this.labelDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelete.Location = new System.Drawing.Point(481, 346);
+            this.labelDelete.Location = new System.Drawing.Point(9, 0);
             this.labelDelete.Name = "labelDelete";
             this.labelDelete.Size = new System.Drawing.Size(150, 16);
             this.labelDelete.TabIndex = 23;
             this.labelDelete.Text = "Yakin ingin hapus data?";
-            this.labelDelete.Visible = false;
             // 
             // buttonTambahOK
             // 
             this.buttonTambahOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTambahOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahOK.Location = new System.Drawing.Point(556, 365);
+            this.buttonTambahOK.Location = new System.Drawing.Point(84, 19);
             this.buttonTambahOK.Name = "buttonTambahOK";
             this.buttonTambahOK.Size = new System.Drawing.Size(75, 23);
             this.buttonTambahOK.TabIndex = 24;
             this.buttonTambahOK.Text = "OK";
             this.buttonTambahOK.UseVisualStyleBackColor = true;
-            this.buttonTambahOK.Visible = false;
             this.buttonTambahOK.Click += new System.EventHandler(this.buttonTambahOK_Click);
             // 
             // buttonTambahCancel
             // 
             this.buttonTambahCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTambahCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahCancel.Location = new System.Drawing.Point(475, 365);
+            this.buttonTambahCancel.Location = new System.Drawing.Point(3, 19);
             this.buttonTambahCancel.Name = "buttonTambahCancel";
             this.buttonTambahCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonTambahCancel.TabIndex = 25;
             this.buttonTambahCancel.Text = "Cancel";
             this.buttonTambahCancel.UseVisualStyleBackColor = true;
-            this.buttonTambahCancel.Visible = false;
             this.buttonTambahCancel.Click += new System.EventHandler(this.buttonTambahCancel_Click);
             // 
             // buttonUpdateOK
             // 
             this.buttonUpdateOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpdateOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateOK.Location = new System.Drawing.Point(557, 365);
+            this.buttonUpdateOK.Location = new System.Drawing.Point(84, 19);
             this.buttonUpdateOK.Name = "buttonUpdateOK";
             this.buttonUpdateOK.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateOK.TabIndex = 26;
             this.buttonUpdateOK.Text = "OK";
             this.buttonUpdateOK.UseVisualStyleBackColor = true;
-            this.buttonUpdateOK.Visible = false;
             this.buttonUpdateOK.Click += new System.EventHandler(this.buttonUpdateOK_Click);
             // 
             // buttonUpdateCancel
             // 
             this.buttonUpdateCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpdateCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateCancel.Location = new System.Drawing.Point(476, 365);
+            this.buttonUpdateCancel.Location = new System.Drawing.Point(3, 19);
             this.buttonUpdateCancel.Name = "buttonUpdateCancel";
             this.buttonUpdateCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateCancel.TabIndex = 27;
             this.buttonUpdateCancel.Text = "Cancel";
             this.buttonUpdateCancel.UseVisualStyleBackColor = true;
-            this.buttonUpdateCancel.Visible = false;
             this.buttonUpdateCancel.Click += new System.EventHandler(this.buttonUpdateCancel_Click);
             // 
             // buttonDeleteOK
             // 
             this.buttonDeleteOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteOK.Location = new System.Drawing.Point(556, 365);
+            this.buttonDeleteOK.Location = new System.Drawing.Point(84, 19);
             this.buttonDeleteOK.Name = "buttonDeleteOK";
             this.buttonDeleteOK.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteOK.TabIndex = 28;
             this.buttonDeleteOK.Text = "OK";
             this.buttonDeleteOK.UseVisualStyleBackColor = true;
-            this.buttonDeleteOK.Visible = false;
             this.buttonDeleteOK.Click += new System.EventHandler(this.buttonDeleteOK_Click);
             // 
             // buttonDeleteCancel
             // 
             this.buttonDeleteCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteCancel.Location = new System.Drawing.Point(475, 365);
+            this.buttonDeleteCancel.Location = new System.Drawing.Point(3, 19);
             this.buttonDeleteCancel.Name = "buttonDeleteCancel";
             this.buttonDeleteCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteCancel.TabIndex = 29;
             this.buttonDeleteCancel.Text = "Cancel";
             this.buttonDeleteCancel.UseVisualStyleBackColor = true;
-            this.buttonDeleteCancel.Visible = false;
             this.buttonDeleteCancel.Click += new System.EventHandler(this.buttonDeleteCancel_Click);
             // 
             // comboBoxSearch
@@ -366,20 +363,14 @@ namespace TugasBesar
             // 
             this.panelContent.Controls.Add(this.comboBoxID);
             this.panelContent.Controls.Add(this.comboBoxSearch);
-            this.panelContent.Controls.Add(this.buttonDeleteCancel);
-            this.panelContent.Controls.Add(this.buttonDeleteOK);
-            this.panelContent.Controls.Add(this.buttonUpdateCancel);
-            this.panelContent.Controls.Add(this.buttonUpdateOK);
-            this.panelContent.Controls.Add(this.buttonTambahCancel);
-            this.panelContent.Controls.Add(this.buttonTambahOK);
-            this.panelContent.Controls.Add(this.labelDelete);
-            this.panelContent.Controls.Add(this.labelUpdate);
-            this.panelContent.Controls.Add(this.labelTambah);
             this.panelContent.Controls.Add(this.buttonUpdate);
+            this.panelContent.Controls.Add(this.panelUpdate);
             this.panelContent.Controls.Add(this.buttonTambah);
             this.panelContent.Controls.Add(this.buttonDelete);
             this.panelContent.Controls.Add(this.tableLayoutPanel1);
             this.panelContent.Controls.Add(this.label1);
+            this.panelContent.Controls.Add(this.panelTambah);
+            this.panelContent.Controls.Add(this.panelDelete);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
@@ -397,6 +388,39 @@ namespace TugasBesar
             this.comboBoxID.Visible = false;
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
+            // panelUpdate
+            // 
+            this.panelUpdate.Controls.Add(this.buttonUpdateCancel);
+            this.panelUpdate.Controls.Add(this.buttonUpdateOK);
+            this.panelUpdate.Controls.Add(this.labelUpdate);
+            this.panelUpdate.Location = new System.Drawing.Point(473, 348);
+            this.panelUpdate.Name = "panelUpdate";
+            this.panelUpdate.Size = new System.Drawing.Size(162, 48);
+            this.panelUpdate.TabIndex = 32;
+            this.panelUpdate.Visible = false;
+            // 
+            // panelTambah
+            // 
+            this.panelTambah.Controls.Add(this.buttonTambahCancel);
+            this.panelTambah.Controls.Add(this.buttonTambahOK);
+            this.panelTambah.Controls.Add(this.labelTambah);
+            this.panelTambah.Location = new System.Drawing.Point(473, 348);
+            this.panelTambah.Name = "panelTambah";
+            this.panelTambah.Size = new System.Drawing.Size(162, 48);
+            this.panelTambah.TabIndex = 34;
+            this.panelTambah.Visible = false;
+            // 
+            // panelDelete
+            // 
+            this.panelDelete.Controls.Add(this.labelDelete);
+            this.panelDelete.Controls.Add(this.buttonDeleteOK);
+            this.panelDelete.Controls.Add(this.buttonDeleteCancel);
+            this.panelDelete.Location = new System.Drawing.Point(473, 348);
+            this.panelDelete.Name = "panelDelete";
+            this.panelDelete.Size = new System.Drawing.Size(162, 48);
+            this.panelDelete.TabIndex = 33;
+            this.panelDelete.Visible = false;
+            // 
             // FormPegawai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +435,12 @@ namespace TugasBesar
             this.tableLayoutPanel1.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
+            this.panelUpdate.ResumeLayout(false);
+            this.panelUpdate.PerformLayout();
+            this.panelTambah.ResumeLayout(false);
+            this.panelTambah.PerformLayout();
+            this.panelDelete.ResumeLayout(false);
+            this.panelDelete.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -444,5 +474,8 @@ namespace TugasBesar
         private System.Windows.Forms.ComboBox comboBoxSearch;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.ComboBox comboBoxID;
+        private System.Windows.Forms.Panel panelUpdate;
+        private System.Windows.Forms.Panel panelTambah;
+        private System.Windows.Forms.Panel panelDelete;
     }
 }

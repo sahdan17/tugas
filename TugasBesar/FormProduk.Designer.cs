@@ -58,15 +58,23 @@ namespace TugasBesar
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.panelDelete = new System.Windows.Forms.Panel();
+            this.panelUpdate = new System.Windows.Forms.Panel();
+            this.panelTambah = new System.Windows.Forms.Panel();
             this.comboBoxKode = new System.Windows.Forms.ComboBox();
-            this.labelTambahStok = new System.Windows.Forms.Label();
-            this.buttonStokCancel = new System.Windows.Forms.Button();
-            this.buttonStokOK = new System.Windows.Forms.Button();
             this.dataGridViewDaftar = new System.Windows.Forms.DataGridView();
             this.buttonTambahStok = new System.Windows.Forms.Button();
+            this.panelTambahStok = new System.Windows.Forms.Panel();
+            this.labelTambahStok = new System.Windows.Forms.Label();
+            this.buttonStokOK = new System.Windows.Forms.Button();
+            this.buttonStokCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
+            this.panelDelete.SuspendLayout();
+            this.panelUpdate.SuspendLayout();
+            this.panelTambah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftar)).BeginInit();
+            this.panelTambahStok.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxID
@@ -96,112 +104,103 @@ namespace TugasBesar
             // 
             this.buttonDeleteCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteCancel.Location = new System.Drawing.Point(453, 257);
+            this.buttonDeleteCancel.Location = new System.Drawing.Point(3, 20);
             this.buttonDeleteCancel.Name = "buttonDeleteCancel";
             this.buttonDeleteCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteCancel.TabIndex = 29;
             this.buttonDeleteCancel.Text = "Cancel";
             this.buttonDeleteCancel.UseVisualStyleBackColor = true;
-            this.buttonDeleteCancel.Visible = false;
             this.buttonDeleteCancel.Click += new System.EventHandler(this.buttonDeleteCancel_Click);
             // 
             // buttonDeleteOK
             // 
             this.buttonDeleteOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteOK.Location = new System.Drawing.Point(534, 257);
+            this.buttonDeleteOK.Location = new System.Drawing.Point(84, 20);
             this.buttonDeleteOK.Name = "buttonDeleteOK";
             this.buttonDeleteOK.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteOK.TabIndex = 28;
             this.buttonDeleteOK.Text = "OK";
             this.buttonDeleteOK.UseVisualStyleBackColor = true;
-            this.buttonDeleteOK.Visible = false;
             this.buttonDeleteOK.Click += new System.EventHandler(this.buttonDeleteOK_Click);
             // 
             // buttonUpdateCancel
             // 
             this.buttonUpdateCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpdateCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateCancel.Location = new System.Drawing.Point(453, 258);
+            this.buttonUpdateCancel.Location = new System.Drawing.Point(3, 19);
             this.buttonUpdateCancel.Name = "buttonUpdateCancel";
             this.buttonUpdateCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateCancel.TabIndex = 27;
             this.buttonUpdateCancel.Text = "Cancel";
             this.buttonUpdateCancel.UseVisualStyleBackColor = true;
-            this.buttonUpdateCancel.Visible = false;
             this.buttonUpdateCancel.Click += new System.EventHandler(this.buttonUpdateCancel_Click);
             // 
             // buttonUpdateOK
             // 
             this.buttonUpdateOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpdateOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateOK.Location = new System.Drawing.Point(534, 258);
+            this.buttonUpdateOK.Location = new System.Drawing.Point(84, 19);
             this.buttonUpdateOK.Name = "buttonUpdateOK";
             this.buttonUpdateOK.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateOK.TabIndex = 26;
             this.buttonUpdateOK.Text = "OK";
             this.buttonUpdateOK.UseVisualStyleBackColor = true;
-            this.buttonUpdateOK.Visible = false;
             this.buttonUpdateOK.Click += new System.EventHandler(this.buttonUpdateOK_Click);
             // 
             // buttonTambahCancel
             // 
             this.buttonTambahCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTambahCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahCancel.Location = new System.Drawing.Point(453, 259);
+            this.buttonTambahCancel.Location = new System.Drawing.Point(3, 19);
             this.buttonTambahCancel.Name = "buttonTambahCancel";
             this.buttonTambahCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonTambahCancel.TabIndex = 25;
             this.buttonTambahCancel.Text = "Cancel";
             this.buttonTambahCancel.UseVisualStyleBackColor = true;
-            this.buttonTambahCancel.Visible = false;
             this.buttonTambahCancel.Click += new System.EventHandler(this.buttonTambahCancel_Click);
             // 
             // buttonTambahOK
             // 
             this.buttonTambahOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTambahOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahOK.Location = new System.Drawing.Point(534, 259);
+            this.buttonTambahOK.Location = new System.Drawing.Point(84, 19);
             this.buttonTambahOK.Name = "buttonTambahOK";
             this.buttonTambahOK.Size = new System.Drawing.Size(75, 23);
             this.buttonTambahOK.TabIndex = 24;
             this.buttonTambahOK.Text = "OK";
             this.buttonTambahOK.UseVisualStyleBackColor = true;
-            this.buttonTambahOK.Visible = false;
             this.buttonTambahOK.Click += new System.EventHandler(this.buttonTambahOK_Click);
             // 
             // labelDelete
             // 
             this.labelDelete.AutoSize = true;
             this.labelDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelete.Location = new System.Drawing.Point(459, 237);
+            this.labelDelete.Location = new System.Drawing.Point(12, 1);
             this.labelDelete.Name = "labelDelete";
             this.labelDelete.Size = new System.Drawing.Size(150, 16);
             this.labelDelete.TabIndex = 23;
             this.labelDelete.Text = "Yakin ingin hapus data?";
-            this.labelDelete.Visible = false;
             // 
             // labelUpdate
             // 
             this.labelUpdate.AutoSize = true;
             this.labelUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdate.Location = new System.Drawing.Point(503, 238);
+            this.labelUpdate.Location = new System.Drawing.Point(56, 0);
             this.labelUpdate.Name = "labelUpdate";
             this.labelUpdate.Size = new System.Drawing.Size(106, 16);
             this.labelUpdate.TabIndex = 22;
             this.labelUpdate.Text = "Update data ini?";
-            this.labelUpdate.Visible = false;
             // 
             // labelTambah
             // 
             this.labelTambah.AutoSize = true;
             this.labelTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTambah.Location = new System.Drawing.Point(488, 239);
+            this.labelTambah.Location = new System.Drawing.Point(41, 0);
             this.labelTambah.Name = "labelTambah";
             this.labelTambah.Size = new System.Drawing.Size(122, 16);
             this.labelTambah.TabIndex = 21;
             this.labelTambah.Text = "Data sudah benar?";
-            this.labelTambah.Visible = false;
             // 
             // buttonUpdate
             // 
@@ -403,33 +402,58 @@ namespace TugasBesar
             // 
             // panelContent
             // 
+            this.panelContent.Controls.Add(this.panelDelete);
+            this.panelContent.Controls.Add(this.panelUpdate);
+            this.panelContent.Controls.Add(this.panelTambah);
             this.panelContent.Controls.Add(this.comboBoxKode);
-            this.panelContent.Controls.Add(this.labelTambahStok);
-            this.panelContent.Controls.Add(this.buttonStokCancel);
-            this.panelContent.Controls.Add(this.buttonStokOK);
             this.panelContent.Controls.Add(this.dataGridViewDaftar);
             this.panelContent.Controls.Add(this.buttonTambahStok);
             this.panelContent.Controls.Add(this.comboBoxID);
             this.panelContent.Controls.Add(this.comboBoxSearch);
-            this.panelContent.Controls.Add(this.buttonDeleteCancel);
-            this.panelContent.Controls.Add(this.buttonDeleteOK);
-            this.panelContent.Controls.Add(this.buttonUpdateCancel);
-            this.panelContent.Controls.Add(this.buttonUpdateOK);
-            this.panelContent.Controls.Add(this.buttonTambahCancel);
-            this.panelContent.Controls.Add(this.buttonTambahOK);
-            this.panelContent.Controls.Add(this.labelDelete);
-            this.panelContent.Controls.Add(this.labelUpdate);
-            this.panelContent.Controls.Add(this.labelTambah);
             this.panelContent.Controls.Add(this.buttonUpdate);
             this.panelContent.Controls.Add(this.buttonTambahData);
             this.panelContent.Controls.Add(this.buttonDelete);
             this.panelContent.Controls.Add(this.tableLayoutPanel1);
             this.panelContent.Controls.Add(this.label1);
+            this.panelContent.Controls.Add(this.panelTambahStok);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(684, 443);
             this.panelContent.TabIndex = 17;
+            // 
+            // panelDelete
+            // 
+            this.panelDelete.Controls.Add(this.buttonDeleteOK);
+            this.panelDelete.Controls.Add(this.buttonDeleteCancel);
+            this.panelDelete.Controls.Add(this.labelDelete);
+            this.panelDelete.Location = new System.Drawing.Point(447, 234);
+            this.panelDelete.Name = "panelDelete";
+            this.panelDelete.Size = new System.Drawing.Size(162, 48);
+            this.panelDelete.TabIndex = 39;
+            this.panelDelete.Visible = false;
+            // 
+            // panelUpdate
+            // 
+            this.panelUpdate.Controls.Add(this.labelUpdate);
+            this.panelUpdate.Controls.Add(this.buttonUpdateOK);
+            this.panelUpdate.Controls.Add(this.buttonUpdateCancel);
+            this.panelUpdate.Location = new System.Drawing.Point(447, 234);
+            this.panelUpdate.Name = "panelUpdate";
+            this.panelUpdate.Size = new System.Drawing.Size(162, 48);
+            this.panelUpdate.TabIndex = 40;
+            this.panelUpdate.Visible = false;
+            // 
+            // panelTambah
+            // 
+            this.panelTambah.Controls.Add(this.labelTambah);
+            this.panelTambah.Controls.Add(this.buttonTambahCancel);
+            this.panelTambah.Controls.Add(this.buttonTambahOK);
+            this.panelTambah.Location = new System.Drawing.Point(444, 234);
+            this.panelTambah.Name = "panelTambah";
+            this.panelTambah.Size = new System.Drawing.Size(162, 48);
+            this.panelTambah.TabIndex = 41;
+            this.panelTambah.Visible = false;
             // 
             // comboBoxKode
             // 
@@ -442,43 +466,6 @@ namespace TugasBesar
             this.comboBoxKode.Size = new System.Drawing.Size(123, 23);
             this.comboBoxKode.TabIndex = 37;
             this.comboBoxKode.SelectedIndexChanged += new System.EventHandler(this.comboBoxKode_SelectedIndexChanged);
-            // 
-            // labelTambahStok
-            // 
-            this.labelTambahStok.AutoSize = true;
-            this.labelTambahStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTambahStok.Location = new System.Drawing.Point(487, 236);
-            this.labelTambahStok.Name = "labelTambahStok";
-            this.labelTambahStok.Size = new System.Drawing.Size(122, 16);
-            this.labelTambahStok.TabIndex = 36;
-            this.labelTambahStok.Text = "Data sudah benar?";
-            this.labelTambahStok.Visible = false;
-            // 
-            // buttonStokCancel
-            // 
-            this.buttonStokCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStokCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStokCancel.Location = new System.Drawing.Point(453, 256);
-            this.buttonStokCancel.Name = "buttonStokCancel";
-            this.buttonStokCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonStokCancel.TabIndex = 35;
-            this.buttonStokCancel.Text = "Cancel";
-            this.buttonStokCancel.UseVisualStyleBackColor = true;
-            this.buttonStokCancel.Visible = false;
-            this.buttonStokCancel.Click += new System.EventHandler(this.buttonStokCancel_Click);
-            // 
-            // buttonStokOK
-            // 
-            this.buttonStokOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStokOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStokOK.Location = new System.Drawing.Point(534, 256);
-            this.buttonStokOK.Name = "buttonStokOK";
-            this.buttonStokOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonStokOK.TabIndex = 34;
-            this.buttonStokOK.Text = "OK";
-            this.buttonStokOK.UseVisualStyleBackColor = true;
-            this.buttonStokOK.Visible = false;
-            this.buttonStokOK.Click += new System.EventHandler(this.buttonStokOK_Click);
             // 
             // dataGridViewDaftar
             // 
@@ -501,6 +488,51 @@ namespace TugasBesar
             this.buttonTambahStok.UseVisualStyleBackColor = true;
             this.buttonTambahStok.Click += new System.EventHandler(this.buttonTambahStok_Click);
             // 
+            // panelTambahStok
+            // 
+            this.panelTambahStok.Controls.Add(this.labelTambahStok);
+            this.panelTambahStok.Controls.Add(this.buttonStokOK);
+            this.panelTambahStok.Controls.Add(this.buttonStokCancel);
+            this.panelTambahStok.Location = new System.Drawing.Point(447, 234);
+            this.panelTambahStok.Name = "panelTambahStok";
+            this.panelTambahStok.Size = new System.Drawing.Size(162, 48);
+            this.panelTambahStok.TabIndex = 38;
+            this.panelTambahStok.Visible = false;
+            // 
+            // labelTambahStok
+            // 
+            this.labelTambahStok.AutoSize = true;
+            this.labelTambahStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTambahStok.Location = new System.Drawing.Point(40, 0);
+            this.labelTambahStok.Name = "labelTambahStok";
+            this.labelTambahStok.Size = new System.Drawing.Size(122, 16);
+            this.labelTambahStok.TabIndex = 36;
+            this.labelTambahStok.Text = "Data sudah benar?";
+            // 
+            // buttonStokOK
+            // 
+            this.buttonStokOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStokOK.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStokOK.Location = new System.Drawing.Point(84, 17);
+            this.buttonStokOK.Name = "buttonStokOK";
+            this.buttonStokOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonStokOK.TabIndex = 34;
+            this.buttonStokOK.Text = "OK";
+            this.buttonStokOK.UseVisualStyleBackColor = true;
+            this.buttonStokOK.Click += new System.EventHandler(this.buttonStokOK_Click);
+            // 
+            // buttonStokCancel
+            // 
+            this.buttonStokCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStokCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStokCancel.Location = new System.Drawing.Point(3, 17);
+            this.buttonStokCancel.Name = "buttonStokCancel";
+            this.buttonStokCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonStokCancel.TabIndex = 35;
+            this.buttonStokCancel.Text = "Cancel";
+            this.buttonStokCancel.UseVisualStyleBackColor = true;
+            this.buttonStokCancel.Click += new System.EventHandler(this.buttonStokCancel_Click);
+            // 
             // FormProduk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,7 +547,15 @@ namespace TugasBesar
             this.tableLayoutPanel1.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
+            this.panelDelete.ResumeLayout(false);
+            this.panelDelete.PerformLayout();
+            this.panelUpdate.ResumeLayout(false);
+            this.panelUpdate.PerformLayout();
+            this.panelTambah.ResumeLayout(false);
+            this.panelTambah.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftar)).EndInit();
+            this.panelTambahStok.ResumeLayout(false);
+            this.panelTambahStok.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -557,5 +597,9 @@ namespace TugasBesar
         private System.Windows.Forms.Button buttonStokCancel;
         private System.Windows.Forms.Button buttonStokOK;
         private System.Windows.Forms.ComboBox comboBoxKode;
+        private System.Windows.Forms.Panel panelTambahStok;
+        private System.Windows.Forms.Panel panelTambah;
+        private System.Windows.Forms.Panel panelUpdate;
+        private System.Windows.Forms.Panel panelDelete;
     }
 }

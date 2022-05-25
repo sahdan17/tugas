@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,12 @@ using System.Threading.Tasks;
 
 namespace TugasBesar
 {
-    class Service : Connection
+    class Service
     {
+        protected static String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
+        static MySqlConnection conn;
+        static MySqlCommand cmd;
+
         public String id_service { set; get; }
         public String tgl_service { set; get; }
         public int total_biaya { set; get; }
@@ -17,12 +22,9 @@ namespace TugasBesar
         public int biaya { set; get; }
         public String struk { set; get; }
 
-        MySqlConnection conn = Connection.conString();
-        MySqlCommand cmd;
-
         public Service()
         {
-            MySqlConnection conn = Connection.conString();
+            conn = new MySqlConnection(conString);
             cmd = new MySqlCommand();
         }
 

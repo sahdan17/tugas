@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,12 +20,14 @@ namespace TugasBesar
 
         private void pictureBoxLogout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormLoginAkun formlogout = new FormLoginAkun();
+            formlogout.Show();
+            this.Hide();
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-            tableLayoutPanelSidebar.Hide();
+            
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
@@ -49,27 +52,6 @@ namespace TugasBesar
             labelTitle.Text = "INTERNAL";
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            Login lgn = new Login();
-            if (lgn.login(textBoxUsername.Text, textBoxPassword.Text))
-            {
-                FormBeranda form1 = new FormBeranda();
-                form1.TopLevel = false;
-                form1.AutoScroll = true;
-                this.panelContent.Controls.Clear();
-                this.panelContent.Controls.Add(form1);
-                form1.Show();
-                labelTitle.Text = "DASHBOARD";
-
-                tableLayoutPanelSidebar.Show();
-            }
-            else
-            {
-                MessageBox.Show("Username atau Password salah");
-            }
-        }
-
         private void buttonTransaksi_Click(object sender, EventArgs e)
         {
             FormTransaksi form3 = new FormTransaksi();
@@ -90,6 +72,22 @@ namespace TugasBesar
             this.panelContent.Controls.Add(form4);
             form4.Show();
             labelTitle.Text = "LAPORAN";
+        }
+
+        private void pictureBoxProfil_Click(object sender, EventArgs e)
+        {
+            FormProfil formProfil = new FormProfil();
+            formProfil.TopLevel = false;
+            formProfil.AutoScroll = true;
+            this.panelContent.Controls.Clear();
+            this.panelContent.Controls.Add(formProfil);
+            formProfil.Show();
+            labelTitle.Text = "";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
