@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2022 pada 10.28
+-- Waktu pembuatan: 25 Bulan Mei 2022 pada 07.57
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `inventaris`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `akun`
+--
+
+CREATE TABLE `akun` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `role` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `akun`
+--
+
+INSERT INTO `akun` (`username`, `password`, `role`) VALUES
+('admin', '1234', 1),
+('kasir', '1111', 2);
 
 -- --------------------------------------------------------
 
@@ -108,7 +128,9 @@ INSERT INTO `daftar_transaksi` (`id_transaksi`, `kode_barang`, `nama_barang`, `k
 ('51436576', 'brg01', 'Oli Repsol', 3, 50000, 150000),
 ('51436576', 'brg07', 'Gear Set', 1, 120000, 120000),
 ('51436576', 'brg09', 'Shockbreaker Depan', 1, 600000, 120000),
-('51436576', 'brg04', 'Spion', 1, 25000, 120000);
+('51436576', 'brg04', 'Spion', 1, 25000, 120000),
+('92593539', 'brg09', 'Shockbreaker Depan', 3, 600000, 1800000),
+('92593539', 'brg07', 'Gear Set', 2, 120000, 240000);
 
 -- --------------------------------------------------------
 
@@ -132,10 +154,10 @@ CREATE TABLE `data_barang` (
 --
 
 INSERT INTO `data_barang` (`id_barang`, `kode_barang`, `nama_barang`, `harga_beli`, `harga_jual`, `kuantitas_barang`, `kuantitas_jual`, `satuan_barang`) VALUES
-(1, 'brg01', 'Oli Repsol', 45000, 50000, 30, 3, 'pcs'),
-(3, 'brg04', 'Spion', 20000, 25000, 28, 7, 'pak'),
-(4, 'brg07', 'Gear Set', 100000, 120000, 30, 1, 'pcs'),
-(5, 'brg09', 'Shockbreaker Depan', 500000, 600000, 29, 1, 'pcs'),
+(1, 'brg01', 'Oli Repsol', 45000, 50000, 33, 3, 'pcs'),
+(3, 'brg04', 'Spion', 20000, 25000, 31, 7, 'pak'),
+(4, 'brg07', 'Gear Set', 100000, 120000, 28, 3, 'pcs'),
+(5, 'brg09', 'Shockbreaker Depan', 500000, 600000, 33, 4, 'pcs'),
 (6, 'brg13', 'Ban R17 120/90', 400000, 430000, 26, 4, 'pcs');
 
 -- --------------------------------------------------------
@@ -163,12 +185,13 @@ INSERT INTO `data_pegawai` (`id_pegawai`, `nama_pegawai`, `tempat_lahir`, `tangg
 (3, 'Ricardo Ronaldo', 'Maluku', '1998-12-17', 'Katholik', 'Pijoan'),
 (10, 'Ahmad Dahlan', 'Jakarta', '2003-02-05', 'Islam', 'Jelutung'),
 (11, 'Dani Rahmat', 'Bulian', '2022-05-16', 'Islam', 'Jambi'),
-(12, 'Sukarni Jaya', 'Semarang', '1997-10-23', 'Islam', 'Handil Jaya'),
+(12, 'Sukarni Jaya', 'Surabaya', '1997-10-23', 'Islam', 'Handil Jaya'),
 (13, 'Adam Maulana', 'Sarolangun', '2004-12-02', 'Islam', 'Kerinci'),
 (14, 'Ucok Baba Siregar', 'Karo', '1999-07-22', 'Katholik', 'Simp. Rimbo'),
 (15, 'Gede Krisna', 'Bali', '2000-08-26', 'Hindu', 'Pattimura'),
 (18, 'Xi Luan', 'Surabaya', '2003-05-28', 'Konghucu', 'Thehok'),
-(20, 'Irwan Maulana', 'Tebo', '2000-08-29', 'Islam', 'Tungkal');
+(20, 'Irwan Maulana', 'Tebo', '2000-08-29', 'Islam', 'Tungkal'),
+(22, 'Amir', 'Papua', '2001-08-18', 'Islam', 'Jambi');
 
 -- --------------------------------------------------------
 
@@ -203,7 +226,8 @@ INSERT INTO `penjualan` (`id_transaksi`, `tgl_jual`, `total`) VALUES
 ('72565334', '2022-05-17', 1200000),
 ('86797353', '2022-05-17', 1200000),
 ('87468510', '2022-05-17', 50000),
-('88925615', '2022-05-17', 385000);
+('88925615', '2022-05-17', 385000),
+('92593539', '2022-05-20', 2040000);
 
 -- --------------------------------------------------------
 
@@ -251,6 +275,12 @@ INSERT INTO `user` (`username`, `password`) VALUES
 --
 
 --
+-- Indeks untuk tabel `akun`
+--
+ALTER TABLE `akun`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indeks untuk tabel `data_barang`
 --
 ALTER TABLE `data_barang`
@@ -294,7 +324,7 @@ ALTER TABLE `data_barang`
 -- AUTO_INCREMENT untuk tabel `data_pegawai`
 --
 ALTER TABLE `data_pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
