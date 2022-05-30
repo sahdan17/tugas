@@ -36,6 +36,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -89,7 +92,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Akun.cs" />
     <Compile Include="Barang.cs" />
+    <Compile Include="dataset\struk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>struk.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormBeranda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +110,6 @@
     </Compile>
     <Compile Include="FormDashboard.Designer.cs">
       <DependentUpon>FormDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDashboardKasir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDashboardKasir.Designer.cs">
-      <DependentUpon>FormDashboardKasir.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInternal.cs">
       <SubType>Form</SubType>
@@ -162,6 +165,12 @@
     <Compile Include="FormTransaksi.Designer.cs">
       <DependentUpon>FormTransaksi.cs</DependentUpon>
     </Compile>
+    <Compile Include="LaporanPenjualan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Pegawai.cs" />
     <Compile Include="Penjualan.cs" />
     <Compile Include="Program.cs" />
@@ -172,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDashboardKasir.resx">
-      <DependentUpon>FormDashboardKasir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternal.resx">
       <DependentUpon>FormInternal.cs</DependentUpon>
@@ -203,6 +209,10 @@
     <EmbeddedResource Include="FormTransaksi.resx">
       <DependentUpon>FormTransaksi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LaporanPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPenjualan.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -213,6 +223,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="dataset\struk.xsc">
+      <DependentUpon>struk.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\struk.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>struk.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\struk.xss">
+      <DependentUpon>struk.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -230,5 +251,9 @@
   <ItemGroup>
     <None Include="Resources\Logo Universitas Jambi UNJA.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

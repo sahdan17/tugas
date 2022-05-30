@@ -64,7 +64,8 @@ namespace TugasBesar
         private void comboBoxBarang_SelectedIndexChanged(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT kode_barang, harga_jual FROM data_barang WHERE nama_barang = '" + comboBoxBarang.Text + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT kode_barang, harga_jual FROM data_barang " +
+                "WHERE nama_barang = '" + comboBoxBarang.Text + "';", conn);
             MySqlDataReader rdr;
             try
             {
@@ -87,7 +88,8 @@ namespace TugasBesar
         private void comboBoxKode_SelectedIndexChanged(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT nama_barang, harga_jual FROM data_barang WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT nama_barang, harga_jual FROM data_barang " +
+                "WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
             MySqlDataReader rdr;
             try
             {
@@ -234,7 +236,8 @@ namespace TugasBesar
         private void Kurang()
         {
             MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_barang FROM data_barang WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_barang FROM data_barang " +
+                "WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
             MySqlDataReader rdr;
             try
             {
@@ -258,7 +261,8 @@ namespace TugasBesar
         private void Tambah()
         {
             MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_jual FROM data_barang WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_jual FROM data_barang " +
+                "WHERE kode_barang = '" + comboBoxKode.Text + "';", conn);
             MySqlDataReader rdr;
             try
             {

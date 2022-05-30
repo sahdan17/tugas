@@ -29,7 +29,6 @@ namespace TugasBesar
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.buttonDeleteCancel = new System.Windows.Forms.Button();
             this.buttonDeleteOK = new System.Windows.Forms.Button();
@@ -76,17 +75,6 @@ namespace TugasBesar
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftar)).BeginInit();
             this.panelTambahStok.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBoxID
-            // 
-            this.comboBoxID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxID.FormattingEnabled = true;
-            this.comboBoxID.Location = new System.Drawing.Point(621, 3);
-            this.comboBoxID.Name = "comboBoxID";
-            this.comboBoxID.Size = new System.Drawing.Size(60, 23);
-            this.comboBoxID.TabIndex = 31;
-            this.comboBoxID.Visible = false;
-            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // comboBoxSearch
             // 
@@ -408,7 +396,6 @@ namespace TugasBesar
             this.panelContent.Controls.Add(this.comboBoxKode);
             this.panelContent.Controls.Add(this.dataGridViewDaftar);
             this.panelContent.Controls.Add(this.buttonTambahStok);
-            this.panelContent.Controls.Add(this.comboBoxID);
             this.panelContent.Controls.Add(this.comboBoxSearch);
             this.panelContent.Controls.Add(this.buttonUpdate);
             this.panelContent.Controls.Add(this.buttonTambahData);
@@ -561,8 +548,6 @@ namespace TugasBesar
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxID;
         private System.Windows.Forms.ComboBox comboBoxSearch;
         private System.Windows.Forms.Button buttonDeleteCancel;
         private System.Windows.Forms.Button buttonDeleteOK;

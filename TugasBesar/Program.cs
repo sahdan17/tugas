@@ -16,7 +16,7 @@ namespace TugasBesar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLoginAkun());
+            Application.Run(new FormLoginAkun());            
         }
     }
 }

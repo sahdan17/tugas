@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Bulan Mei 2022 pada 08.04
+-- Waktu pembuatan: 30 Bulan Mei 2022 pada 12.41
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -30,16 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `akun` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `role` int(11) NOT NULL
+  `role` int(11) NOT NULL,
+  `id_pegawai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `akun`
 --
 
-INSERT INTO `akun` (`username`, `password`, `role`) VALUES
-('admin', '1234', 1),
-('kasir', '1111', 2);
+INSERT INTO `akun` (`username`, `password`, `role`, `id_pegawai`) VALUES
+('admin', '1234', 1, 1),
+('kasir1', '1111', 2, 2),
+('kasir2', '2222', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -154,9 +156,9 @@ CREATE TABLE `data_barang` (
 --
 
 INSERT INTO `data_barang` (`id_barang`, `kode_barang`, `nama_barang`, `harga_beli`, `harga_jual`, `kuantitas_barang`, `kuantitas_jual`, `satuan_barang`) VALUES
-(1, 'brg01', 'Oli Repsol', 45000, 50000, 33, 3, 'pcs'),
+(1, 'brg01', 'Oli Repsol', 45000, 50000, 37, 3, 'pcs'),
 (3, 'brg04', 'Spion', 20000, 25000, 31, 7, 'pak'),
-(4, 'brg07', 'Gear Set', 100000, 120000, 28, 3, 'pcs'),
+(4, 'brg07', 'Gear Set SSS', 100000, 120000, 28, 3, 'pcs'),
 (5, 'brg09', 'Shockbreaker Depan', 500000, 600000, 33, 4, 'pcs'),
 (6, 'brg13', 'Ban R17 120/90', 400000, 430000, 26, 4, 'pcs');
 
@@ -185,8 +187,7 @@ INSERT INTO `data_pegawai` (`id_pegawai`, `nama_pegawai`, `tempat_lahir`, `tangg
 (3, 'Ricardo Ronaldo', 'Maluku', '1998-12-17', 'Katholik', 'Pijoan'),
 (10, 'Ahmad Dahlan', 'Jakarta', '2003-02-05', 'Islam', 'Jelutung'),
 (11, 'Dani Rahmat', 'Bulian', '2022-05-16', 'Islam', 'Jambi'),
-(12, 'Sukarni Jaya', 'Surabaya', '1997-10-23', 'Islam', 'Handil Jaya'),
-(13, 'Adam Maulana', 'Sarolangun', '2004-12-02', 'Islam', 'Kerinci'),
+(12, 'Sukarni Jaya', 'Surabaya', '1997-10-23', 'Islam', 'Handil'),
 (14, 'Ucok Baba Siregar', 'Karo', '1999-07-22', 'Katholik', 'Simp. Rimbo'),
 (15, 'Gede Krisna', 'Bali', '2000-08-26', 'Hindu', 'Pattimura'),
 (18, 'Xi Luan', 'Surabaya', '2003-05-28', 'Konghucu', 'Thehok'),
@@ -318,7 +319,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `data_barang`
 --
 ALTER TABLE `data_barang`
-  MODIFY `id_barang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_barang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_pegawai`

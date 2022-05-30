@@ -15,6 +15,8 @@ namespace TugasBesar
     public partial class FormPegawai : Form
     {
         String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
+
+        int id_pegawai;
         public FormPegawai()
         {
             InitializeComponent();
@@ -80,7 +82,7 @@ namespace TugasBesar
             editPegawai.tanggal_lahir = dateTimePickerTglLahir.Value.ToString("yyyyMMdd");
             editPegawai.agama = comboBoxAgama.SelectedItem.ToString();
             editPegawai.alamat = textBoxAlamat.Text;
-            editPegawai._nama_pegawai = comboBoxSearch.Text;
+            editPegawai.id_pegawai = id_pegawai;
             response = editPegawai.Update();
             if (response == null) MessageBox.Show("Update data sukses");
             else MessageBox.Show(response);
@@ -97,7 +99,7 @@ namespace TugasBesar
         {
             string response;
             Pegawai deletePegawai = new Pegawai();
-            deletePegawai._nama_pegawai = comboBoxSearch.Text;
+            deletePegawai.id_pegawai = id_pegawai;
             response = deletePegawai.Delete();
             if (response == null) MessageBox.Show("Hapus data sukses");
             else MessageBox.Show(response);
@@ -119,7 +121,6 @@ namespace TugasBesar
                     string nama = rdr.GetString(0);
                     string id = rdr.GetInt32(1).ToString();
                     comboBoxSearch.Items.Add(nama);
-                    comboBoxID.Items.Add(id);
                 }
             }
             catch
@@ -145,8 +146,10 @@ namespace TugasBesar
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    string id = rdr.GetInt32(0).ToString();
-                    comboBoxID.Text = id;
+                    id_pegawai = rdr.GetInt32(0);
+                    //string id = rdr.GetInt32(0).ToString();
+                    //comboBoxID.Text = id;
+                    SelectID(id_pegawai);
                 }
             }
             catch
@@ -195,9 +198,42 @@ namespace TugasBesar
 
         private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(conString);
+            /*MySqlConnection conn = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("SELECT nama_pegawai, tempat_lahir, tanggal_lahir, agama, alamat " +
                 "FROM data_pegawai WHERE id_pegawai = '" + comboBoxID.Text + "';", conn);
+            MySqlDataReader rdr;
+            try
+            {
+                conn.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string nama = rdr.GetString(0);
+                    string tempat = rdr.GetString(1);
+                    DateTime tanggal = rdr.GetDateTime(2);
+                    string agama = rdr.GetString(3);
+                    string alamat = rdr.GetString(4);
+                    textBoxNama.Text = nama;
+                    textBoxTmptLahir.Text = tempat;
+                    dateTimePickerTglLahir.Value = tanggal;
+                    comboBoxAgama.Text = agama;
+                    textBoxAlamat.Text = alamat;
+                }
+            }
+            catch
+            {
+
+            }
+            buttonUpdate.Enabled = true;
+            buttonDelete.Enabled = true;
+            buttonTambah.Enabled = false;*/
+        }
+
+        private void SelectID(int id)
+        {
+            MySqlConnection conn = new MySqlConnection(conString);
+            MySqlCommand cmd = new MySqlCommand("SELECT nama_pegawai, tempat_lahir, tanggal_lahir, agama, alamat " +
+                "FROM data_pegawai WHERE id_pegawai = '" + id + "';", conn);
             MySqlDataReader rdr;
             try
             {

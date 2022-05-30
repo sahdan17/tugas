@@ -14,6 +14,7 @@ namespace TugasBesar
         protected static String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
         static MySqlConnection conn;
         static MySqlCommand cmd;
+        public int id_barang { set; get; }
         public String kode_barang { set; get; }
         public String nama_barang { set; get; }
         public int harga_beli { set; get; }
@@ -77,9 +78,9 @@ namespace TugasBesar
         {
             String result = null;
             conn.Open();
-            using (MySqlCommand cmd = new MySqlCommand("DELETE FROM data_barang WHERE id_barang = '"+tambah+"'", conn))
+            using (MySqlCommand cmd = new MySqlCommand("DELETE FROM data_barang WHERE id_barang = @id_barang", conn))
             {
-                cmd.Parameters.AddWithValue(tambah, this.tambah);
+                cmd.Parameters.AddWithValue("@id_barang", this.id_barang);
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -100,14 +101,14 @@ namespace TugasBesar
             cmd = conn.CreateCommand();
             cmd.CommandText = "UPDATE data_barang set kode_barang = @kode_barang, nama_barang = @nama_barang, harga_beli = " +
                 "@harga_beli, harga_jual = @harga_jual, kuantitas_barang = @kuantitas_barang, satuan_barang = @satuan_barang " +
-                "WHERE id_barang = '"+tambah+"'";
+                "WHERE id_barang = @id_barang";
             cmd.Parameters.AddWithValue("@kode_barang", this.kode_barang);
             cmd.Parameters.AddWithValue("@nama_barang", this.nama_barang);
             cmd.Parameters.AddWithValue("@harga_beli", this.harga_beli);
             cmd.Parameters.AddWithValue("@harga_jual", this.harga_jual);
             cmd.Parameters.AddWithValue("@kuantitas_barang", this.kuantitas_barang);
             cmd.Parameters.AddWithValue("@satuan_barang", this.satuan_barang);
-            cmd.Parameters.AddWithValue(tambah, this.tambah);
+            cmd.Parameters.AddWithValue("@id_barang", this.id_barang);
 
             try
             {
@@ -126,9 +127,9 @@ namespace TugasBesar
             string result = null;
             conn.Open();
             cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE data_barang set kuantitas_barang = @kuantitas_barang WHERE id_barang = '"+tambah+"'";
+            cmd.CommandText = "UPDATE data_barang set kuantitas_barang = @kuantitas_barang WHERE id_barang = @id_barang";
             cmd.Parameters.AddWithValue("@kuantitas_barang", this.kuantitas_barang);
-            cmd.Parameters.AddWithValue(tambah, this.tambah);
+            cmd.Parameters.AddWithValue("@id_barang", this.id_barang);
 
             try
             {

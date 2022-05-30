@@ -55,7 +55,6 @@ namespace TugasBesar
             this.buttonDeleteCancel = new System.Windows.Forms.Button();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.panelUpdate = new System.Windows.Forms.Panel();
             this.panelTambah = new System.Windows.Forms.Panel();
             this.panelDelete = new System.Windows.Forms.Panel();
@@ -361,7 +360,6 @@ namespace TugasBesar
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.comboBoxID);
             this.panelContent.Controls.Add(this.comboBoxSearch);
             this.panelContent.Controls.Add(this.buttonUpdate);
             this.panelContent.Controls.Add(this.panelUpdate);
@@ -376,17 +374,6 @@ namespace TugasBesar
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(684, 443);
             this.panelContent.TabIndex = 16;
-            // 
-            // comboBoxID
-            // 
-            this.comboBoxID.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBoxID.FormattingEnabled = true;
-            this.comboBoxID.Location = new System.Drawing.Point(572, 79);
-            this.comboBoxID.Name = "comboBoxID";
-            this.comboBoxID.Size = new System.Drawing.Size(60, 27);
-            this.comboBoxID.TabIndex = 31;
-            this.comboBoxID.Visible = false;
-            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // panelUpdate
             // 
@@ -473,7 +460,6 @@ namespace TugasBesar
         private System.Windows.Forms.Button buttonDeleteCancel;
         private System.Windows.Forms.ComboBox comboBoxSearch;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.ComboBox comboBoxID;
         private System.Windows.Forms.Panel panelUpdate;
         private System.Windows.Forms.Panel panelTambah;
         private System.Windows.Forms.Panel panelDelete;

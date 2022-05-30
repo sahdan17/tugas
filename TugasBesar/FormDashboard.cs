@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,9 +14,17 @@ namespace TugasBesar
 {
     public partial class FormDashboard : Form
     {
-        public FormDashboard()
+        Akun akun;
+        Pegawai pegawai;
+        protected String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
+        static MySqlConnection conn;
+        static MySqlCommand cmd;
+        public FormDashboard(Akun akun)
         {
             InitializeComponent();
+            this.akun = akun;
+            conn = new MySqlConnection(conString);
+            cmd = new MySqlCommand();
         }
 
         private void pictureBoxLogout_Click(object sender, EventArgs e)
@@ -27,7 +36,20 @@ namespace TugasBesar
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-            
+            pegawai = new Pegawai();
+            pegawai = Pegawai.Select(akun.id_pegawai);
+            labelUser.Text = pegawai.nama_pegawai;
+            if (pegawai.role == 1)
+            {
+                labelPosisi.Text = "Admin";
+            }
+            else if (pegawai.role == 2)
+            {
+                labelPosisi.Text = "Kasir";
+                buttonDashboard.Visible = false;
+                buttonInternal.Visible = false;
+                buttonLaporan.Visible = false;
+            }
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
@@ -76,7 +98,7 @@ namespace TugasBesar
 
         private void pictureBoxProfil_Click(object sender, EventArgs e)
         {
-            FormProfil formProfil = new FormProfil();
+            FormProfil formProfil = new FormProfil(akun);
             formProfil.TopLevel = false;
             formProfil.AutoScroll = true;
             this.panelContent.Controls.Clear();

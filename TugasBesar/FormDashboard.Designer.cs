@@ -32,6 +32,8 @@ namespace TugasBesar
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelPosisi = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
             this.tableLayoutPanelSidebar = new System.Windows.Forms.TableLayoutPanel();
             this.buttonLaporan = new System.Windows.Forms.Button();
             this.buttonTransaksi = new System.Windows.Forms.Button();
@@ -67,6 +69,8 @@ namespace TugasBesar
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Controls.Add(this.labelPosisi);
+            this.panel3.Controls.Add(this.labelUser);
             this.panel3.Controls.Add(this.tableLayoutPanelSidebar);
             this.panel3.Controls.Add(this.pictureBoxProfil);
             this.panel3.Controls.Add(this.pictureBoxLogout);
@@ -74,6 +78,28 @@ namespace TugasBesar
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(218, 750);
             this.panel3.TabIndex = 15;
+            // 
+            // labelPosisi
+            // 
+            this.labelPosisi.AutoSize = true;
+            this.labelPosisi.BackColor = System.Drawing.Color.Transparent;
+            this.labelPosisi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPosisi.Location = new System.Drawing.Point(12, 325);
+            this.labelPosisi.Name = "labelPosisi";
+            this.labelPosisi.Size = new System.Drawing.Size(20, 19);
+            this.labelPosisi.TabIndex = 3;
+            this.labelPosisi.Text = "A";
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.BackColor = System.Drawing.Color.Transparent;
+            this.labelUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(12, 294);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(49, 19);
+            this.labelUser.TabIndex = 2;
+            this.labelUser.Text = "label1";
             // 
             // tableLayoutPanelSidebar
             // 
@@ -229,6 +255,7 @@ namespace TugasBesar
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tableLayoutPanelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogout)).EndInit();
@@ -254,5 +281,7 @@ namespace TugasBesar
         private System.Windows.Forms.Button buttonInternal;
         private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Label labelPosisi;
+        private System.Windows.Forms.Label labelUser;
     }
 }

@@ -14,9 +14,7 @@ namespace TugasBesar
 {
     public partial class FormProduk : Form
     {
-        int qty_awal;
-        int qty_beli;
-        int qty_akhir;
+        int qty_awal, qty_beli, qty_akhir, id_barang;
 
         String conString = ConfigurationManager.ConnectionStrings["inventaris"].ConnectionString;
         
@@ -77,7 +75,7 @@ namespace TugasBesar
             Tambah();
             Barang dataBarang = new Barang();
             dataBarang.kuantitas_barang = qty_akhir;
-            dataBarang.tambah = comboBoxID.Text;
+            dataBarang.id_barang = id_barang;
 
             String response;
             response = dataBarang.Tambah();
@@ -124,7 +122,7 @@ namespace TugasBesar
             dataBarang.harga_jual = Convert.ToInt32(textBoxHargaJual.Text);
             dataBarang.kuantitas_barang = Convert.ToInt32(textBoxKuantitas.Text);
             dataBarang.satuan_barang = comboBoxSatuan.Text;
-            dataBarang.tambah = comboBoxID.Text;
+            dataBarang.id_barang = id_barang;
 
             String response;
             response = dataBarang.Update();
@@ -142,7 +140,7 @@ namespace TugasBesar
         private void buttonDeleteOK_Click(object sender, EventArgs e)
         {
             Barang dataBarang = new Barang();
-            dataBarang.tambah = comboBoxID.Text;
+            dataBarang.id_barang = id_barang;
 
             String response;
             response = dataBarang.Delete();
@@ -173,7 +171,6 @@ namespace TugasBesar
                     string id = rdr.GetInt32(2).ToString();
                     comboBoxSearch.Items.Add(nama);
                     comboBoxKode.Items.Add(kode);
-                    comboBoxID.Items.Add(id);
                 }
             }
             catch
@@ -194,10 +191,10 @@ namespace TugasBesar
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    string id = rdr.GetInt32(0).ToString();
+                    id_barang = rdr.GetInt32(0);
                     string kode = rdr.GetString(1);
-                    comboBoxID.Text = id;
                     comboBoxKode.Text = kode;
+                    SelectID(id_barang);
                 }
             }
             catch
@@ -218,51 +215,16 @@ namespace TugasBesar
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    string id = rdr.GetInt32(1).ToString();
+                    id_barang = rdr.GetInt32(1);
                     string nama = rdr.GetString(0);
-                    comboBoxID.Text = id;
                     comboBoxSearch.Text = nama;
+                    SelectID(id_barang);
                 }
             }
             catch
             {
 
             }
-        }
-
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT kode_barang, nama_barang, harga_beli, harga_jual, kuantitas_barang, satuan_barang " +
-                "FROM data_barang WHERE id_barang = '" + comboBoxID.Text + "';", conn);
-            MySqlDataReader rdr;
-            try
-            {
-                conn.Open();
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    string kode = rdr.GetString(0);
-                    string nama = rdr.GetString(1);
-                    string beli = rdr.GetInt32(2).ToString();
-                    string jual = rdr.GetInt32(3).ToString();
-                    string qty = rdr.GetInt32(4).ToString();
-                    string satuan = rdr.GetString(5);
-                    textBoxKode.Text = kode;
-                    textBoxNama.Text = nama;
-                    textBoxHargaBeli.Text = beli;
-                    textBoxHargaJual.Text = jual;
-                    textBoxKuantitas.Text = qty;
-                    comboBoxSatuan.Text = satuan;
-                }
-            }
-            catch
-            {
-
-            }
-            buttonDelete.Enabled = true;
-            buttonUpdate.Enabled = true;
-            buttonTambahStok.Enabled = true;
         }
 
         private void FormProduk_Load(object sender, EventArgs e)
@@ -289,7 +251,6 @@ namespace TugasBesar
             textBoxHargaJual.Text = null;
             textBoxKuantitas.Text = null;
             comboBoxSatuan.Text = null;
-            comboBoxID.Text = null;
             comboBoxKode.Text = null;
             comboBoxSearch.Text = null;
         }
@@ -297,7 +258,7 @@ namespace TugasBesar
         private void Tambah()
         {
             MySqlConnection conn = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_barang FROM data_barang WHERE id_barang = '" + comboBoxID.Text + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT kuantitas_barang FROM data_barang WHERE id_barang = '" + id_barang + "';", conn);
             MySqlDataReader rdr;
             try
             {
@@ -335,6 +296,41 @@ namespace TugasBesar
             dt = tabelStruk.Read();
             dataGridViewDaftar.DataSource = dt;
             dataGridViewDaftar.Show();
+        }
+
+        private void SelectID(int id)
+        {
+            MySqlConnection conn = new MySqlConnection(conString);
+            MySqlCommand cmd = new MySqlCommand("SELECT kode_barang, nama_barang, harga_beli, harga_jual, kuantitas_barang, satuan_barang " +
+                "FROM data_barang WHERE id_barang = '" + id + "';", conn);
+            MySqlDataReader rdr;
+            try
+            {
+                conn.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string kode = rdr.GetString(0);
+                    string nama = rdr.GetString(1);
+                    string beli = rdr.GetInt32(2).ToString();
+                    string jual = rdr.GetInt32(3).ToString();
+                    string qty = rdr.GetInt32(4).ToString();
+                    string satuan = rdr.GetString(5);
+                    textBoxKode.Text = kode;
+                    textBoxNama.Text = nama;
+                    textBoxHargaBeli.Text = beli;
+                    textBoxHargaJual.Text = jual;
+                    textBoxKuantitas.Text = qty;
+                    comboBoxSatuan.Text = satuan;
+                }
+            }
+            catch
+            {
+
+            }
+            buttonDelete.Enabled = true;
+            buttonUpdate.Enabled = true;
+            buttonTambahStok.Enabled = true;
         }
     }
 }
